@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.lck
+*.lock
+*.tmp
+*.partial
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+/Release_Assets/
+/Local_Artifacts/

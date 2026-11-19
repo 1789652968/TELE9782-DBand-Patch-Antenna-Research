@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\09_Automation\Round2_Port.py", line 26, in <module>
+    if __name__=='__main__':main()
+  File "D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\09_Automation\Round2_Port.py", line 24, in main
+    if top!=best:check(top,tested[top.parent.name]['screen'],R/'Highest_Efficiency_Port_Check.json')
+  File "D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\09_Automation\Round2_Port.py", line 17, in check
+    assert any('140 ghz' in s.lower() for s in messages),messages
+AssertionError: ['Using a constant approximation of dispersive material(s) at 150 GHz and neglecting loss terms.  More...', 'Using a constant approximation of dispersive material(s) at 150 GHz and neglecting loss terms.  More...']
+Traceback (most recent call last):
+  File "D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\09_Automation\Round2_Port.py", line 26, in <module>
+    if __name__=='__main__':main()
+  File "D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\09_Automation\Round2_Port.py", line 24, in main
+    if top!=best:check(top,tested[top.parent.name]['screen'],R/'Highest_Efficiency_Port_Check.json')
+  File "D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\09_Automation\Round2_Port.py", line 17, in check
+    assert any('140 ghz' in s.lower() for s in messages),messages
+AssertionError: ['Using a constant approximation of dispersive material(s) at 150 GHz and neglecting loss terms.  More...', 'Using a constant approximation of dispersive material(s) at 150 GHz and neglecting loss terms.  More...']
+Traceback (most recent call last):
+  File "D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\09_Automation\Resume_Publish.py", line 21, in <module>
+    if __name__=='__main__':main()
+  File "D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\09_Automation\Resume_Publish.py", line 15, in main
+    else:raise RuntimeError(name)
+RuntimeError: Round2_Port.py

@@ -1,0 +1,263 @@
+{
+  "name": "Fine",
+  "project": "D:\\TELE9782\\Project_Final\\07_Array_1x2\\06_Working\\Fine\\Fine.cst",
+  "solver": {
+    "message": null,
+    "state": "SUCCESS"
+  },
+  "f_min_s11_GHz": 151.83999633789062,
+  "min_s11_dB": -23.96912962904276,
+  "farfields": [
+    {
+      "f_GHz": 130.0,
+      "Dmax_dBi": 9.018605375498115,
+      "rad_eff_dB": -2.901763485695888,
+      "total_eff_dB": -9.360297945050537,
+      "Prad_W": 0.05793489308381095,
+      "realized_gain_dBi": -0.34169256955241983,
+      "s11_dB": -1.112702197612704
+    },
+    {
+      "f_GHz": 140.0,
+      "Dmax_dBi": 9.263546350229902,
+      "rad_eff_dB": -1.8317730034312047,
+      "total_eff_dB": -5.817371048356734,
+      "Prad_W": 0.13098841874758166,
+      "realized_gain_dBi": 3.4461753018731662,
+      "s11_dB": -2.2143605254087433
+    },
+    {
+      "f_GHz": 146.0,
+      "Dmax_dBi": 9.167950891800922,
+      "rad_eff_dB": -1.3313209275812405,
+      "total_eff_dB": -3.1126737547808583,
+      "Prad_W": 0.24417580538263728,
+      "realized_gain_dBi": 6.055277137020064,
+      "s11_dB": -4.730618469348511
+    },
+    {
+      "f_GHz": 147.0,
+      "Dmax_dBi": 9.115794416236785,
+      "rad_eff_dB": -1.2715098379017018,
+      "total_eff_dB": -2.63796592990651,
+      "Prad_W": 0.2723788684482575,
+      "realized_gain_dBi": 6.477828486330274,
+      "s11_dB": -5.687215427236476
+    },
+    {
+      "f_GHz": 148.0,
+      "Dmax_dBi": 9.049304819680385,
+      "rad_eff_dB": -1.2205221563823783,
+      "total_eff_dB": -2.1810828396013826,
+      "Prad_W": 0.30259498104624905,
+      "realized_gain_dBi": 6.868221980079003,
+      "s11_dB": -7.024027343439565
+    },
+    {
+      "f_GHz": 149.0,
+      "Dmax_dBi": 8.96685552571348,
+      "rad_eff_dB": -1.1835415295238945,
+      "total_eff_dB": -1.769394623279454,
+      "Prad_W": 0.33268294859017167,
+      "realized_gain_dBi": 7.1974609024340275,
+      "s11_dB": -8.989590246806749
+    },
+    {
+      "f_GHz": 150.0,
+      "Dmax_dBi": 8.867473136230796,
+      "rad_eff_dB": -1.1654850467486875,
+      "total_eff_dB": -1.442730368602823,
+      "Prad_W": 0.3586715812848248,
+      "realized_gain_dBi": 7.424742767627973,
+      "s11_dB": -12.087085777055147
+    },
+    {
+      "f_GHz": 151.0,
+      "Dmax_dBi": 8.750403571039408,
+      "rad_eff_dB": -1.1687309775455432,
+      "total_eff_dB": -1.2448296315610772,
+      "Prad_W": 0.3753937530111192,
+      "realized_gain_dBi": 7.50557393947833,
+      "s11_dB": -17.60206746015863
+    },
+    {
+      "f_GHz": 152.0,
+      "Dmax_dBi": 8.614523818254712,
+      "rad_eff_dB": -1.193373221337042,
+      "total_eff_dB": -1.2125380482821408,
+      "Prad_W": 0.3781953628167123,
+      "realized_gain_dBi": 7.401985769972571,
+      "s11_dB": -23.56237363674647
+    },
+    {
+      "f_GHz": 153.0,
+      "Dmax_dBi": 8.45812388067989,
+      "rad_eff_dB": -1.2391133722906273,
+      "total_eff_dB": -1.367478094338232,
+      "Prad_W": 0.3649406110603868,
+      "realized_gain_dBi": 7.090645786341659,
+      "s11_dB": -15.357411255301106
+    },
+    {
+      "f_GHz": 154.0,
+      "Dmax_dBi": 8.280647023932854,
+      "rad_eff_dB": -1.307076179446758,
+      "total_eff_dB": -1.711394100513592,
+      "Prad_W": 0.3371557682925742,
+      "realized_gain_dBi": 6.569252923419262,
+      "s11_dB": -10.511204489659372
+    },
+    {
+      "f_GHz": 160.0,
+      "Dmax_dBi": 7.437627110985988,
+      "rad_eff_dB": -2.219871166550992,
+      "total_eff_dB": -5.866172304931061,
+      "Prad_W": 0.12952475331915503,
+      "realized_gain_dBi": 1.5714548060549272,
+      "s11_dB": -2.455651539744589
+    },
+    {
+      "f_GHz": 170.0,
+      "Dmax_dBi": 5.998629055734171,
+      "rad_eff_dB": -4.22654572248385,
+      "total_eff_dB": -11.190419303393362,
+      "Prad_W": 0.038012643618493346,
+      "realized_gain_dBi": -5.19179024765919,
+      "s11_dB": -0.9755816878113132
+    }
+  ],
+  "messages": [
+    {
+      "text": "This software is licensed for non-commercial use only.",
+      "type": "WARNING"
+    },
+    {
+      "text": "CAD processing via DLL",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD Processing Version Info\n    ACIS version installed:    33.0.1\n    ACIS version used:    33.0.1",
+      "type": "INFO"
+    },
+    {
+      "text": "Starting adaptive port meshing.",
+      "type": "INFO"
+    },
+    {
+      "text": "Mode calculation for port 1:",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD processing via DLL",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD Processing Version Info\n    ACIS version installed:    33.0.1\n    ACIS version used:    33.0.1",
+      "type": "INFO"
+    },
+    {
+      "text": "Using Generalized port mode solver.",
+      "type": "INFO"
+    },
+    {
+      "text": "Port mode solver: Detected dispersive material(s) at port 1. \nUsing a constant approximation of dispersive material(s) at 150 GHz and neglecting loss terms.  More...",
+      "type": "INFO"
+    },
+    {
+      "text": "Pass 1 successfully completed.",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD processing via DLL",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD Processing Version Info\n    ACIS version installed:    33.0.1\n    ACIS version used:    33.0.1",
+      "type": "INFO"
+    },
+    {
+      "text": "Pass 2 successfully completed. Delta (Line Imp.): 0.56%",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD processing via DLL",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD Processing Version Info\n    ACIS version installed:    33.0.1\n    ACIS version used:    33.0.1",
+      "type": "INFO"
+    },
+    {
+      "text": "Pass 3 successfully completed. Delta (Line Imp.): 0.25%",
+      "type": "INFO"
+    },
+    {
+      "text": "Adaptive port meshing finished.",
+      "type": "INFO"
+    },
+    {
+      "text": "This software is licensed for non-commercial use only.",
+      "type": "WARNING"
+    },
+    {
+      "text": "CAD processing via DLL",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD Processing Version Info\n    ACIS version installed:    33.0.1\n    ACIS version used:    33.0.1",
+      "type": "INFO"
+    },
+    {
+      "text": "2026-11-19 02:11:38   current system memory usage reached 85% (14 GB)",
+      "type": "WARNING"
+    },
+    {
+      "text": "Matrix computation (PBA)\n    [Perfect Boundary Approximation (PBA), version: default]\n    [GPU acceleration: off (by user)]\nMore...",
+      "type": "INFO"
+    },
+    {
+      "text": "Geometry representation: compact",
+      "type": "INFO"
+    },
+    {
+      "text": "2026-11-19 02:11:40   current system memory usage reached 90% (15 GB)",
+      "type": "WARNING"
+    },
+    {
+      "text": "2026-11-19 02:11:41   current system memory usage reached 90% (15 GB)",
+      "type": "WARNING"
+    },
+    {
+      "text": "Using Generalized port mode solver.",
+      "type": "INFO"
+    },
+    {
+      "text": "Port mode solver: Detected dispersive material(s) at port 1. \nUsing a constant approximation of dispersive material(s) at 150 GHz and neglecting loss terms.  More...",
+      "type": "INFO"
+    },
+    {
+      "text": "Solver Settings:\nExcited port mode: 1 (1) \n[Frequency domain results normalized to default signal]\nExcitation duration: 1.77727437e-001 ns \nSteady state accuracy limit: -60 dB \nMaximum number of time steps: 94231 \nTime step width:\n     without subcycles: 3.772140155e-005 ns\n     used: 3.772140155e-005 ns\nNumber of threads used: 4",
+      "type": "INFO"
+    },
+    {
+      "text": "Steady state energy criterion met, solver finished successfully.",
+      "type": "INFO"
+    },
+    {
+      "text": "The Z and Y matrices have been successfully calculated.\nThe VSWR results have been successfully calculated.",
+      "type": "INFO"
+    },
+    {
+      "text": "Successfully finished Secondary Quantity Evaluation.",
+      "type": "INFO"
+    },
+    {
+      "text": "Creating parametric 1D results for Run ID 1",
+      "type": "INFO"
+    },
+    {
+      "text": "5 warnings occurred.",
+      "type": "WARNING"
+    }
+  ]
+}

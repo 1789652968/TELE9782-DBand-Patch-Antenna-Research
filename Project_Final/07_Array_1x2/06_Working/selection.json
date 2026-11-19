@@ -1,0 +1,151 @@
+{
+  "name": "Transformer",
+  "parameters": {
+    "array_spacing": 1.0,
+    "transformer_length": 0.28,
+    "transformer_width": 0.055,
+    "junction_y": -0.53,
+    "ground_width": 2.5,
+    "ground_length": 1.5,
+    "patch_length": 0.507,
+    "inset_length": 0.165
+  },
+  "trials": [
+    [
+      [
+        false,
+        8.818719189093615
+      ],
+      "Initial",
+      {
+        "array_spacing": 1.0,
+        "transformer_length": 0.308,
+        "transformer_width": 0.049,
+        "junction_y": -0.53,
+        "ground_width": 2.5,
+        "ground_length": 1.5,
+        "patch_length": 0.513,
+        "inset_length": 0.19
+      }
+    ],
+    [
+      [
+        true,
+        7.064675220642608
+      ],
+      "Length",
+      {
+        "array_spacing": 1.0,
+        "transformer_length": 0.308,
+        "transformer_width": 0.049,
+        "junction_y": -0.53,
+        "ground_width": 2.5,
+        "ground_length": 1.5,
+        "patch_length": 0.507,
+        "inset_length": 0.19
+      }
+    ],
+    [
+      [
+        true,
+        7.506385464894333
+      ],
+      "Inset",
+      {
+        "array_spacing": 1.0,
+        "transformer_length": 0.308,
+        "transformer_width": 0.049,
+        "junction_y": -0.53,
+        "ground_width": 2.5,
+        "ground_length": 1.5,
+        "patch_length": 0.507,
+        "inset_length": 0.165
+      }
+    ],
+    [
+      [
+        true,
+        7.573897694567732
+      ],
+      "Transformer",
+      {
+        "array_spacing": 1.0,
+        "transformer_length": 0.28,
+        "transformer_width": 0.055,
+        "junction_y": -0.53,
+        "ground_width": 2.5,
+        "ground_length": 1.5,
+        "patch_length": 0.507,
+        "inset_length": 0.165
+      }
+    ],
+    [
+      [
+        true,
+        7.447543659815265
+      ],
+      "Spacing90",
+      {
+        "array_spacing": 0.9,
+        "transformer_length": 0.28,
+        "transformer_width": 0.055,
+        "junction_y": -0.53,
+        "ground_width": 2.5,
+        "ground_length": 1.5,
+        "patch_length": 0.507,
+        "inset_length": 0.165
+      }
+    ],
+    [
+      [
+        true,
+        7.518768292077334
+      ],
+      "Spacing110",
+      {
+        "array_spacing": 1.1,
+        "transformer_length": 0.28,
+        "transformer_width": 0.055,
+        "junction_y": -0.53,
+        "ground_width": 2.5,
+        "ground_length": 1.5,
+        "patch_length": 0.507,
+        "inset_length": 0.165
+      }
+    ],
+    [
+      [
+        false,
+        8.955111639814021
+      ],
+      "Spacing120",
+      {
+        "array_spacing": 1.2,
+        "transformer_length": 0.28,
+        "transformer_width": 0.055,
+        "junction_y": -0.53,
+        "ground_width": 2.5,
+        "ground_length": 1.5,
+        "patch_length": 0.507,
+        "inset_length": 0.165
+      }
+    ],
+    [
+      [
+        false,
+        8.482135014147442
+      ],
+      "Spacing130",
+      {
+        "array_spacing": 1.3,
+        "transformer_length": 0.28,
+        "transformer_width": 0.055,
+        "junction_y": -0.53,
+        "ground_width": 2.5,
+        "ground_length": 1.5,
+        "patch_length": 0.507,
+        "inset_length": 0.165
+      }
+    ]
+  ]
+}

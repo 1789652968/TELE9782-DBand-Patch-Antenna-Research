@@ -1,0 +1,11 @@
+INDEPENDENT_MESH {'f_GHz': 150.0, 'S11_dB': -29.3589380505766, 'Dmax_dBi': 8.849879234478273, 'realized_gain_dBi': 7.469909478085903, 'rad_eff_pct': 72.86293984058587, 'total_eff_pct': 72.77848727024137, 'f_low_GHz': 147.6795072237803, 'f_high_GHz': 151.77754874045166, 'BW_GHz': 4.098041516671373, 'FBW_percent': 2.7369811030005287, 'left_censored': False, 'right_censored': False, 'fmin_GHz': np.float64(149.83999633789062), 'minimum_S11_dB': np.float64(-33.290240195605364), 'Zre150_ohm': np.float64(49.31293402793746), 'Zim150_ohm': np.float64(-3.361407232132055), 'reference_ohm': np.float64(49.46449489919334), 'S11_50_dB': np.float64(-29.23691143572869), 'realized_50_dBi': np.float64(7.469765867096546), 'D_broadside_dBi': np.float64(8.847), 'theta_deg': np.float64(2.0), 'phi_deg': np.float64(84.0), 'sphere_mean': np.float64(0.9868891761488905), 'broadside_Ephi_dBi': np.float64(8.847), 'broadside_Etheta_dBi': np.float64(-76.38), 'E_HPBW_deg': np.float64(104.3118105999462), 'E_low_deg': np.float64(-47.15079365079365), 'E_high_deg': np.float64(57.16101694915255), 'E_other_forward_peak_relative_dB': None, 'H_HPBW_deg': np.float64(43.061594202898554), 'H_low_deg': np.float64(-21.52898550724638), 'H_high_deg': np.float64(21.532608695652176), 'H_other_forward_peak_relative_dB': np.float64(-17.198), 'realized_broadside_dBi': np.float64(7.4670302436076295), 'cells': 523614}
+Array_Results_Extraction
+Array_Comparison
+Array_Coupling
+Array_Current_Maps
+Array_Common_Reference
+Array_Report
+Array_Config_Check
+Array_Power_Closure
+Array_Delivery
+DELIVERY_CHECKED D:\TELE9782\Project_Final\07_Array_1x2

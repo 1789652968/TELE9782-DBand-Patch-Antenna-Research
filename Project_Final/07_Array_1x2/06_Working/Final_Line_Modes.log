@@ -1,0 +1,4 @@
+You are working in interactive mode.
+{'Gamma': {'x': 150.0, 'real': 0.0, 'imag': 5141.84608441827, 'xlabel': 'Frequency / GHz', 'ylabel': 'Propagation Constant / 1/m'}, 'Line Impedance': {'x': 150.0, 'real': 68.58481714429219, 'imag': 0.0, 'xlabel': 'Frequency / GHz', 'ylabel': 'Impedance / Ohm'}, 'Effective Dielectric Constant': {'x': 150.0, 'real': 2.6750832113334946, 'imag': -0.0, 'xlabel': 'Frequency / GHz', 'ylabel': ''}}
+You are working in interactive mode.
+{'Gamma': {'x': 150.0, 'real': 0.0, 'imag': 5167.266594933548, 'xlabel': 'Frequency / GHz', 'ylabel': 'Propagation Constant / 1/m'}, 'Line Impedance': {'x': 150.0, 'real': 64.7847890267176, 'imag': 0.0, 'xlabel': 'Frequency / GHz', 'ylabel': 'Impedance / Ohm'}, 'Effective Dielectric Constant': {'x': 150.0, 'real': 2.7015990095684748, 'imag': -0.0, 'xlabel': 'Frequency / GHz', 'ylabel': ''}}

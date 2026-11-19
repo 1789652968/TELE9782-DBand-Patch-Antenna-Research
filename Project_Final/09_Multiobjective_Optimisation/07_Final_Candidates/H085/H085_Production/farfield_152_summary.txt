@@ -1,0 +1,17 @@
+Farfield Summary
+---------------------
+Array pattern: Single antenna
+Monitor name: farfield (f=152) [1]
+Plot mode: Directivity
+Component: Abs
+Plot type: 2D
+Step angle Theta: 2
+Step angle Phi  : 2
+Coordinates: Spherical
+Polarization: Abs
+Frequency : 152 GHz
+Radiation efficiency: -0.756711 dB 
+Total efficiency: -0.762377 dB
+Maximum directivity [dB]: 9.19209
+Maximum gain [dB]: 8.43538
+Maximum realized gain [dB]: 8.42971

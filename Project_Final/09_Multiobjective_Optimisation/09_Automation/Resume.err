@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\09_Automation\Round2_Core.py", line 98, in run
+    return finish_exports(p,folder,cfg,mode,source,start)
+  File "D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\09_Automation\Round2_Core.py", line 52, in finish_exports
+    p.save();dump(folder/'round2.json',v);print('DONE',folder.name,round(v['eta'],3),v['theta'],round(v['G0'],3),round(v['S11_50'],2),flush=True);return v
+RuntimeError: Unable to determine project name. Is the Project still open?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\09_Automation\Round2_Resume.py", line 57, in <module>
+    if len(sys.argv)>1:single()
+  File "D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\09_Automation\Round2_Resume.py", line 10, in single
+    run(de,st,task['name'],task['change'],task['mode'],source)
+  File "D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\09_Automation\Round2_Core.py", line 104, in run
+    if p:p.close()
+RuntimeError: Unable to determine project name. Is the Project still open?

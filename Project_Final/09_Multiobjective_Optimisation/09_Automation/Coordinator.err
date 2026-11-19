@@ -1,0 +1,7 @@
+python.exe : Traceback (most recent call last):
+ËùÔÚÎ»ÖÃ D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\09_Automation\Continue_Study.ps1:11 ×Ö·û: 5
++     & 'D:\TELE9782\CST Studio Suite 2024\Opera\code\bin\python.exe' - ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

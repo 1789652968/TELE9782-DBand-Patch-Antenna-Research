@@ -1,0 +1,24 @@
+{
+  "selected_projects": {
+    "ShiftNull75_Delivery": {
+      "cst": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\07_Final_Candidates\\ShiftNull75\\ShiftNull75_Delivery\\ShiftNull75_Delivery.cst",
+      "sha256": "2e839eda4c0375968caa4ffd9a70bf9ce8b48a7fdbb17d2eb8d1b8a140c52338",
+      "cells": 574464
+    },
+    "H085_Delivery": {
+      "cst": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\07_Final_Candidates\\H085\\H085_Delivery\\H085_Delivery.cst",
+      "sha256": "99bd566fcaa5aae5dd197248b38af120c1d0a6c4ea7f3b747b0222d324617bfa",
+      "cells": 583200
+    },
+    "ShiftBracket85_Delivery": {
+      "cst": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\07_Final_Candidates\\ShiftBracket85\\ShiftBracket85_Delivery\\ShiftBracket85_Delivery.cst",
+      "sha256": "451a3e9afaceebb21ae23c64f8b5c3292391c064bd690a860c6387e0a42cafe1",
+      "cells": 583200
+    }
+  },
+  "course_recommendation": "D:\\TELE9782\\Project_Final\\08_Efficiency_Optimisation\\06_Final_Candidate\\TELE9782_DBand_Efficiency_Final\\TELE9782_DBand_Efficiency_Final.cst",
+  "verified_chart_files": 28,
+  "trials": 68,
+  "sensitivity_rows": 15,
+  "source_and_backup_cst_sha256": "2030cb97b1ef2eb6c17ed60dcfb91eaf0d6838e38425c55beeb807cefc2f14fd"
+}

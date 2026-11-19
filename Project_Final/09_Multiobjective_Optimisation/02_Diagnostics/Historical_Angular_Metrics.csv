@@ -1,0 +1,3 @@
+﻿design,f_GHz,main_theta,main_phi,sampled_peak_dBi,D0_dBi,front_back_axial_dB,front_back_hemisphere_peaks_dB,crosspol_dBc_at_plusZ,worst_crosspol_dBc_forward_3dB_contour,secondary_forward_local_peak_dBc
+TELE9782_DBand_Efficiency_Final,150.0,16.0,90.0,9.14,8.659,19.169,7.426,-106.249,-18.0922363871298,
+02_Simulation_Results,150.0,2.0,82.0,8.843,8.841,21.191,7.7379999999999995,-86.261,-21.248233410060283,-15.931000000000001

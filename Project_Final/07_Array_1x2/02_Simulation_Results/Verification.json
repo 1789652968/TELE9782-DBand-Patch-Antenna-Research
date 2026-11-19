@@ -1,0 +1,59 @@
+{
+  "source": "Final50",
+  "delivered": "D:\\TELE9782\\Project_Final\\07_Array_1x2\\01_CST_Project\\TELE9782_DBand_1x2_Array_Final.cst",
+  "before_rerun_complex_delta": 0.0,
+  "rerun_complex_delta": 0.0070206039390842,
+  "after_reopen_complex_delta": 0.0,
+  "exported_csv_complex_delta": 0.0,
+  "farfields_rerun_max_deltas_dB": {
+    "Dmax_dBi": 0.007941524512706799,
+    "realized_gain_dBi": 0.053028932289633346,
+    "rad_eff_dB": 0.14954043174262832,
+    "total_eff_dB": 0.05479165687138776
+  },
+  "port": [
+    "Ports\\port1 (50ohm_microstrip)"
+  ],
+  "monitors": [
+    "Field Monitors\\farfield (f=130)",
+    "Field Monitors\\farfield (f=140)",
+    "Field Monitors\\farfield (f=146)",
+    "Field Monitors\\farfield (f=147)",
+    "Field Monitors\\farfield (f=148)",
+    "Field Monitors\\farfield (f=149)",
+    "Field Monitors\\farfield (f=150)",
+    "Field Monitors\\farfield (f=151)",
+    "Field Monitors\\farfield (f=152)",
+    "Field Monitors\\farfield (f=153)",
+    "Field Monitors\\farfield (f=154)",
+    "Field Monitors\\farfield (f=160)",
+    "Field Monitors\\farfield (f=170)"
+  ],
+  "parameters": {
+    "array_spacing": 1.2,
+    "eps_r": 3.5,
+    "feed_width": 0.09,
+    "ground_length": 1.5,
+    "ground_width": 2.5,
+    "inset_gap": 0.02,
+    "inset_length": 0.165,
+    "junction_y": -0.53,
+    "launch_length": 0.5,
+    "loss_tangent": 0.0027,
+    "mesh_box": 54.0,
+    "mesh_near": 36.0,
+    "metal_thickness": 0.002,
+    "patch_length": 0.513,
+    "patch_width": 0.667,
+    "port_halfwidth": 0.25,
+    "substrate_h": 0.04,
+    "transformer_length": 0.28,
+    "transformer_width": 0.055
+  },
+  "solver": {
+    "message": null,
+    "state": "SUCCESS"
+  },
+  "sample_count": 1001,
+  "final_reopened": true
+}

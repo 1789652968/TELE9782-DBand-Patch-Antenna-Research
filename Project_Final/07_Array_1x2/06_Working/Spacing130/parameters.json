@@ -1,0 +1,21 @@
+{
+  "patch_width": 0.667,
+  "patch_length": 0.507,
+  "substrate_h": 0.04,
+  "feed_width": 0.09,
+  "inset_length": 0.165,
+  "inset_gap": 0.02,
+  "ground_width": 2.5,
+  "ground_length": 1.5,
+  "metal_thickness": 0.002,
+  "launch_length": 0.5,
+  "port_halfwidth": 0.25,
+  "mesh_near": 20,
+  "mesh_box": 30,
+  "eps_r": 3.5,
+  "loss_tangent": 0.0027,
+  "array_spacing": 1.3,
+  "transformer_length": 0.28,
+  "transformer_width": 0.055,
+  "junction_y": -0.53
+}

@@ -1,0 +1,32 @@
+{
+  "path": "D:\\TELE9782\\Project_Final\\08_Efficiency_Optimisation\\06_Final_Candidate\\TELE9782_DBand_Efficiency_Final\\TELE9782_DBand_Efficiency_Final.cst",
+  "summary": {
+    "name": "TELE9782_DBand_Efficiency_Final",
+    "solver": "SUCCESS",
+    "eta": 82.99382838409066,
+    "eta_farfield": 82.99382838409066,
+    "eta_total50": 81.36593284637794,
+    "S11_50": -17.074192657107105,
+    "D": 9.140048651667463,
+    "G50": 8.244474730817341,
+    "Rin": 59.514390973719436,
+    "Xin": 12.149827947848872,
+    "Zref": 52.47766283915269,
+    "Pin": 0.500000001450255,
+    "Pout": 0.007767391693987324,
+    "Pacc": 0.4922326097562677,
+    "Prad": 0.40852268739164754,
+    "Pmetal": 0.03915404310457557,
+    "Pdiel": 0.027414395136400694,
+    "Pport": 0.015387690985029614,
+    "residual_pct": 0.356293570123825,
+    "bandwidth50": 13.514552021017494,
+    "low50": 141.1394006570165,
+    "high50": 154.653952678034,
+    "fmin50": 150.72000122070312
+  },
+  "native_model_sha256": "2030cb97b1ef2eb6c17ed60dcfb91eaf0d6838e38425c55beeb807cefc2f14fd",
+  "case_count": 20,
+  "config_checked": true,
+  "report": "D:\\TELE9782\\Project_Final\\08_Efficiency_Optimisation\\09_Documentation\\Efficiency_Optimisation_Report.md"
+}

@@ -1,0 +1,12 @@
+{
+  "jobs": [
+    "ShiftBracket75",
+    "ShiftBracket85",
+    "ShiftBracketWideGround",
+    "H095DeepInset",
+    "H110DeepInset",
+    "ShiftBracket95"
+  ],
+  "shift_proposal_mm": 0.144,
+  "chosen": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\07_Final_Candidates\\H085\\H085_Delivery"
+}

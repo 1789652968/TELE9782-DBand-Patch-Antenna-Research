@@ -1,0 +1,90 @@
+[
+  {
+    "asset": "GroundControl.zip",
+    "opened_using": "CST 2024 cst.results.ProjectFile read-only",
+    "s11_samples": 1001,
+    "s11_at_frequency_GHz": 150.0,
+    "s11_native_real": -0.038105640560388565,
+    "s11_native_imag": -0.02004130743443966,
+    "model_history": 22879,
+    "native_result_files": 250,
+    "result_tree_field_entries": []
+  },
+  {
+    "asset": "H085_Delivery.zip",
+    "opened_using": "CST 2024 cst.results.ProjectFile read-only",
+    "s11_samples": 1001,
+    "s11_at_frequency_GHz": 150.0,
+    "s11_native_real": -0.04496599733829498,
+    "s11_native_imag": 0.16013400256633759,
+    "model_history": 28786,
+    "native_result_files": 472,
+    "result_tree_field_entries": []
+  },
+  {
+    "asset": "ShiftBracket85_Delivery.zip",
+    "opened_using": "CST 2024 cst.results.ProjectFile read-only",
+    "s11_samples": 1001,
+    "s11_at_frequency_GHz": 150.0,
+    "s11_native_real": 0.12167169153690338,
+    "s11_native_imag": 0.0466899648308754,
+    "model_history": 30132,
+    "native_result_files": 472,
+    "result_tree_field_entries": []
+  },
+  {
+    "asset": "ShiftNull75_Delivery.zip",
+    "opened_using": "CST 2024 cst.results.ProjectFile read-only",
+    "s11_samples": 1001,
+    "s11_at_frequency_GHz": 150.0,
+    "s11_native_real": 0.010616439394652843,
+    "s11_native_imag": -0.0854189395904541,
+    "model_history": 30120,
+    "native_result_files": 472,
+    "result_tree_field_entries": []
+  },
+  {
+    "asset": "TELE9782_DBand_1x2_Array_Final.zip",
+    "opened_using": "CST 2024 cst.results.ProjectFile read-only",
+    "s11_samples": 1001,
+    "s11_at_frequency_GHz": 150.0,
+    "s11_native_real": 0.005397317931056023,
+    "s11_native_imag": -0.04072382673621178,
+    "model_history": 28285,
+    "native_result_files": 469,
+    "result_tree_field_entries": []
+  },
+  {
+    "asset": "TELE9782_DBand_Efficiency_Final.zip",
+    "opened_using": "CST 2024 cst.results.ProjectFile read-only",
+    "s11_samples": 1001,
+    "s11_at_frequency_GHz": 150.0,
+    "s11_native_real": 0.07373426854610443,
+    "s11_native_imag": 0.10048899799585342,
+    "model_history": 28285,
+    "native_result_files": 469,
+    "result_tree_field_entries": []
+  },
+  {
+    "asset": "TELE9782_DBand_Patch_Final.zip",
+    "opened_using": "CST 2024 cst.results.ProjectFile read-only",
+    "s11_samples": 1001,
+    "s11_at_frequency_GHz": 150.0,
+    "s11_native_real": 0.05491999164223671,
+    "s11_native_imag": -0.20599909126758575,
+    "model_history": 23250,
+    "native_result_files": 325,
+    "result_tree_field_entries": []
+  },
+  {
+    "asset": "WideGround_Delivery.zip",
+    "opened_using": "CST 2024 cst.results.ProjectFile read-only",
+    "s11_samples": 1001,
+    "s11_at_frequency_GHz": 150.0,
+    "s11_native_real": 0.07637867331504822,
+    "s11_native_imag": 0.09337060898542404,
+    "model_history": 28786,
+    "native_result_files": 472,
+    "result_tree_field_entries": []
+  }
+]

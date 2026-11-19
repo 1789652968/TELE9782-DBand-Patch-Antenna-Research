@@ -1,0 +1,11 @@
+from pathlib import Path
+a=Path(__file__).resolve().parent
+def edit(name,changes):
+    p=a/name;s=p.read_text(encoding='utf-8-sig')
+    for old,new in changes:
+        assert old in s,old
+        s=s.replace(old,new)
+    p.write_text(s,encoding='utf-8')
+edit('Array_Report.py',[(chr(92)+chr(96),chr(96)),("A nominal 50 Ω line has a solved native reference of {a['reference_ohm']:.4f} Ω ({s['reference_ohm']:.4f} Ω in the original).","The final solver explicitly uses {a['reference_ohm']:.4f} Ω for its S-parameter reference. The original single's native reference is {s['reference_ohm']:.4f} Ω and the final physical trunk's modal impedance appears in Port_Mode_Check.json."),("in both histories. The common","in the original and screening histories. Production uses AutoNormImpedance=True and NormingImpedance=50. The common"),("The construction and result readers derive","The original 04_Automation directory was absent in this local final package. The construction and result readers derive"),("## Conclusion\\n","## Conclusion\\n") ] if False else [(chr(92)+chr(96),chr(96)),("A nominal 50 Ω line has a solved native reference of {a['reference_ohm']:.4f} Ω ({s['reference_ohm']:.4f} Ω in the original).","The final solver explicitly uses {a['reference_ohm']:.4f} Ω for its S-parameter reference. The original single's native reference is {s['reference_ohm']:.4f} Ω and the final physical trunk's modal impedance appears in Port_Mode_Check.json."),("in both histories. The common","in the original and screening histories. Production uses AutoNormImpedance=True and NormingImpedance=50. The common"),("The construction and result readers derive","The original 04_Automation directory was absent in this local final package. The construction and result readers derive")])
+edit('Array_Results_Extraction.py',[("if all(float(v.get(k,-99))","if v['name']!='Final50' and all(float(v.get(k,-99))"),("write(R/'Mesh_Convergence.csv',mesh);","for v in history:\n        if v['role']=='Screening candidate':\n            v['selection_reason']='Outside -10 dB match at 150 GHz' if v['S11_dB']>-10 else 'Matched screening result with lower realized gain than winner'\n        else:v['selection_reason']=v['role']\n    write(R/'Optimisation_History.csv',history)\n    write(R/'Mesh_Convergence.csv',mesh);")])
+

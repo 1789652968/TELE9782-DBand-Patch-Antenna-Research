@@ -1,0 +1,51 @@
+{
+  "native_commands": {
+    ".Sigma \"4.561e+007\"": true,
+    ".Epsilon \"eps_r\"": true,
+    ".TanD \"loss_tangent\"": true,
+    ".TanDFreq \"150\"": true,
+    ".MeshType \"PBA\"": true,
+    ".MonitorFarFieldsNearToModel \"False\"": true,
+    ".SteadyStateLimit \"-60\"": true,
+    ".CalculationType \"TD-S\"": true,
+    ".Orientation \"ymin\"": true,
+    ".PortNumber \"1\"": true,
+    ".NumberOfModes \"1\"": true,
+    ".Ymin \"open\"": true,
+    "Solver.FrequencyRange \"130\", \"170\"": true,
+    "Solver.AutoNormImpedance \"True\"": true,
+    "Solver.NormingImpedance \"50\"": true,
+    "Solid.Add \"antenna:trunk\", \"antenna:patchleft\"": true,
+    "Solid.Add \"antenna:trunk\", \"antenna:feedleft\"": true,
+    "Solid.Add \"antenna:trunk\", \"antenna:bendleft\"": true,
+    "Solid.Add \"antenna:trunk\", \"antenna:xfleft\"": true,
+    "Solid.Add \"antenna:trunk\", \"antenna:patchright\"": true,
+    "Solid.Add \"antenna:trunk\", \"antenna:feedright\"": true,
+    "Solid.Add \"antenna:trunk\", \"antenna:bendright\"": true,
+    "Solid.Add \"antenna:trunk\", \"antenna:xfright\"": true
+  },
+  "solver_log": {
+    "Steady state energy criterion met, solver finished successfully.": true,
+    "Perfect Boundary Approximation (PBA)": true
+  },
+  "readable_farfields": {
+    "130": true,
+    "140": true,
+    "146": true,
+    "147": true,
+    "148": true,
+    "149": true,
+    "150": true,
+    "151": true,
+    "152": true,
+    "153": true,
+    "154": true,
+    "160": true,
+    "170": true
+  },
+  "files": [
+    "Model/3D/ModelHistory.json",
+    "Result/Model.log"
+  ],
+  "material_definition_source": "D:\\TELE9782\\Project_Final\\07_Array_1x2\\01_CST_Project\\TELE9782_DBand_1x2_Array_Final\\Model\\3D\\ModelHistory.json"
+}

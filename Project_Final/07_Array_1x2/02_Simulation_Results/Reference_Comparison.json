@@ -1,0 +1,16 @@
+{
+  "modal_source": "Refined",
+  "native_modal_reference_ohm": 49.43095506072753,
+  "pre_rerun_expected_fixed50_from_modal_S11_dB": -27.383668751855772,
+  "native_delivered_reference_ohm": 49.430955062647996,
+  "native_delivered_S11_dB": -27.727404928459478,
+  "native_gain_dBi": 7.407844583333692,
+  "pre_rerun_expected_realized_common50_dBi": 7.456185024793227,
+  "delivered_realized_common50_dBi": 7.407970402783714,
+  "native_vs_math50_max_complex_difference": 0.009768949211813255,
+  "native_modal_vs_production_max_complex_difference": 0.0070206039390842,
+  "broadband_max_complex_difference": 6.908815587129459e-08,
+  "CST_touchstone_header": "# GHz S RI R 50",
+  "CST_touchstone_s11_150_dB": -27.80248179942142,
+  "explanation": "Native S1,1 retained the solved modal reference. The CST Touchstone exporter explicitly renormalized the saved result to 50 ohms."
+}

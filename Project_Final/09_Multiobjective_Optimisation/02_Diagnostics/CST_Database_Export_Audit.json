@@ -1,0 +1,107 @@
+[
+  {
+    "tree": "1D Results\\Efficiencies\\Rad. Efficiency [1]",
+    "export": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\01_Baseline_Backup\\TELE9782_DBand_Efficiency_Final\\1D Results_Efficiencies_Rad. Efficiency [1].csv",
+    "n": 13,
+    "max_x_delta": 0.0,
+    "max_complex_y_delta": 0.0
+  },
+  {
+    "tree": "1D Results\\Efficiencies\\Tot. Efficiency [1]",
+    "export": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\01_Baseline_Backup\\TELE9782_DBand_Efficiency_Final\\1D Results_Efficiencies_Tot. Efficiency [1].csv",
+    "n": 13,
+    "max_x_delta": 0.0,
+    "max_complex_y_delta": 0.0
+  },
+  {
+    "tree": "1D Results\\Power\\Excitation [1]\\Loss in Dielectrics",
+    "export": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\01_Baseline_Backup\\TELE9782_DBand_Efficiency_Final\\1D Results_Power_Excitation [1]_Loss in Dielectrics.csv",
+    "n": 5,
+    "max_x_delta": 0.0,
+    "max_complex_y_delta": 0.0
+  },
+  {
+    "tree": "1D Results\\Power\\Excitation [1]\\Loss in Metals",
+    "export": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\01_Baseline_Backup\\TELE9782_DBand_Efficiency_Final\\1D Results_Power_Excitation [1]_Loss in Metals.csv",
+    "n": 5,
+    "max_x_delta": 0.0,
+    "max_complex_y_delta": 0.0
+  },
+  {
+    "tree": "1D Results\\Power\\Excitation [1]\\Loss per Material\\Metal loss in Gold",
+    "export": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\01_Baseline_Backup\\TELE9782_DBand_Efficiency_Final\\1D Results_Power_Excitation [1]_Loss per Material_Metal loss in Gold.csv",
+    "n": 5,
+    "max_x_delta": 0.0,
+    "max_complex_y_delta": 0.0
+  },
+  {
+    "tree": "1D Results\\Power\\Excitation [1]\\Loss per Material\\Volume loss in Polyimide (lossy)",
+    "export": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\01_Baseline_Backup\\TELE9782_DBand_Efficiency_Final\\1D Results_Power_Excitation [1]_Loss per Material_Volume loss in Polyimide (lossy).csv",
+    "n": 5,
+    "max_x_delta": 0.0,
+    "max_complex_y_delta": 0.0
+  },
+  {
+    "tree": "1D Results\\Power\\Excitation [1]\\Power Absorbed at all Ports",
+    "export": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\01_Baseline_Backup\\TELE9782_DBand_Efficiency_Final\\1D Results_Power_Excitation [1]_Power Absorbed at all Ports.csv",
+    "n": 1001,
+    "max_x_delta": 0.0,
+    "max_complex_y_delta": 0.0
+  },
+  {
+    "tree": "1D Results\\Power\\Excitation [1]\\Power Absorbed per Port\\Port 1",
+    "export": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\01_Baseline_Backup\\TELE9782_DBand_Efficiency_Final\\1D Results_Power_Excitation [1]_Power Absorbed per Port_Port 1.csv",
+    "n": 1001,
+    "max_x_delta": 0.0,
+    "max_complex_y_delta": 0.0
+  },
+  {
+    "tree": "1D Results\\Power\\Excitation [1]\\Power Accepted",
+    "export": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\01_Baseline_Backup\\TELE9782_DBand_Efficiency_Final\\1D Results_Power_Excitation [1]_Power Accepted.csv",
+    "n": 1001,
+    "max_x_delta": 0.0,
+    "max_complex_y_delta": 0.0
+  },
+  {
+    "tree": "1D Results\\Power\\Excitation [1]\\Power Accepted per Port\\Port 1",
+    "export": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\01_Baseline_Backup\\TELE9782_DBand_Efficiency_Final\\1D Results_Power_Excitation [1]_Power Accepted per Port_Port 1.csv",
+    "n": 1001,
+    "max_x_delta": 0.0,
+    "max_complex_y_delta": 0.0
+  },
+  {
+    "tree": "1D Results\\Power\\Excitation [1]\\Power Outgoing all Ports",
+    "export": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\01_Baseline_Backup\\TELE9782_DBand_Efficiency_Final\\1D Results_Power_Excitation [1]_Power Outgoing all Ports.csv",
+    "n": 1001,
+    "max_x_delta": 0.0,
+    "max_complex_y_delta": 0.0
+  },
+  {
+    "tree": "1D Results\\Power\\Excitation [1]\\Power Radiated",
+    "export": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\01_Baseline_Backup\\TELE9782_DBand_Efficiency_Final\\1D Results_Power_Excitation [1]_Power Radiated.csv",
+    "n": 13,
+    "max_x_delta": 0.0,
+    "max_complex_y_delta": 0.0
+  },
+  {
+    "tree": "1D Results\\Power\\Excitation [1]\\Power Stimulated",
+    "export": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\01_Baseline_Backup\\TELE9782_DBand_Efficiency_Final\\1D Results_Power_Excitation [1]_Power Stimulated.csv",
+    "n": 1001,
+    "max_x_delta": 0.0,
+    "max_complex_y_delta": 0.0
+  },
+  {
+    "tree": "1D Results\\Reference Impedance\\ZRef 1(1)",
+    "export": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\01_Baseline_Backup\\TELE9782_DBand_Efficiency_Final\\1D Results_Reference Impedance_ZRef 1(1).csv",
+    "n": 1001,
+    "max_x_delta": 0.0,
+    "max_complex_y_delta": 0.0
+  },
+  {
+    "tree": "1D Results\\S-Parameters\\S1,1",
+    "export": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\01_Baseline_Backup\\TELE9782_DBand_Efficiency_Final\\1D Results_S-Parameters_S1,1.csv",
+    "n": 1001,
+    "max_x_delta": 0.0,
+    "max_complex_y_delta": 0.0
+  }
+]

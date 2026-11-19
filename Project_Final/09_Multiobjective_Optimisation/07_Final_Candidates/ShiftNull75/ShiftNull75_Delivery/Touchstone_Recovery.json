@@ -1,0 +1,6 @@
+{
+  "samples": 1001,
+  "max_complex_error": 6.794972799189358e-08,
+  "database_matched": true,
+  "reran_solver": false
+}

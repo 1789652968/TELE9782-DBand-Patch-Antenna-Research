@@ -1,0 +1,171 @@
+{
+  "name": "TELE9782_DBand_Efficiency_Final",
+  "project": "D:\\TELE9782\\Project_Final\\08_Efficiency_Optimisation\\06_Final_Candidate\\TELE9782_DBand_Efficiency_Final\\TELE9782_DBand_Efficiency_Final.cst",
+  "solver": {
+    "message": null,
+    "state": "SUCCESS"
+  },
+  "f_min_s11_GHz": 150.9199981689453,
+  "min_s11_dB": -18.990631386772407,
+  "farfields": [
+    {
+      "f_GHz": 130.0,
+      "Dmax_dBi": 9.34129088789182,
+      "rad_eff_dB": -0.9747064465678625,
+      "total_eff_dB": -3.522164406177935,
+      "Prad_W": 0.2222048663825552,
+      "realized_gain_dBi": 5.819126481713885,
+      "s11_dB": -3.528418723373923
+    },
+    {
+      "f_GHz": 140.0,
+      "Dmax_dBi": 9.200388826764133,
+      "rad_eff_dB": -0.694773604131153,
+      "total_eff_dB": -1.286250364691669,
+      "Prad_W": 0.3718304648833095,
+      "realized_gain_dBi": 7.9141384620724615,
+      "s11_dB": -8.950848928835235
+    },
+    {
+      "f_GHz": 146.0,
+      "Dmax_dBi": 9.216007612854948,
+      "rad_eff_dB": -0.6986047389972478,
+      "total_eff_dB": -0.9418497577332935,
+      "Prad_W": 0.4025177419427733,
+      "realized_gain_dBi": 8.274157855121654,
+      "s11_dB": -12.638458090931845
+    },
+    {
+      "f_GHz": 147.0,
+      "Dmax_dBi": 9.213988704629529,
+      "rad_eff_dB": -0.7166190292064807,
+      "total_eff_dB": -0.911661826707051,
+      "Prad_W": 0.4053254014517067,
+      "realized_gain_dBi": 8.302326877922479,
+      "s11_dB": -13.573700630137957
+    },
+    {
+      "f_GHz": 148.0,
+      "Dmax_dBi": 9.201978337989958,
+      "rad_eff_dB": -0.7413678730208461,
+      "total_eff_dB": -0.8884397112261326,
+      "Prad_W": 0.4074985181348531,
+      "realized_gain_dBi": 8.313538626763826,
+      "s11_dB": -14.775876403785865
+    },
+    {
+      "f_GHz": 149.0,
+      "Dmax_dBi": 9.180532008188955,
+      "rad_eff_dB": -0.7721731126154354,
+      "total_eff_dB": -0.8746542375879602,
+      "Prad_W": 0.4087940647152053,
+      "realized_gain_dBi": 8.305877770600995,
+      "s11_dB": -16.32254476357823
+    },
+    {
+      "f_GHz": 150.0,
+      "Dmax_dBi": 9.140048651667463,
+      "rad_eff_dB": -0.8095420158040845,
+      "total_eff_dB": -0.8775382542395084,
+      "Prad_W": 0.40852268739164754,
+      "realized_gain_dBi": 8.262510397427953,
+      "s11_dB": -18.086948626568986
+    },
+    {
+      "f_GHz": 151.0,
+      "Dmax_dBi": 9.08051673708784,
+      "rad_eff_dB": -0.8557566044404997,
+      "total_eff_dB": -0.9110519360918232,
+      "Prad_W": 0.4053823274550995,
+      "realized_gain_dBi": 8.169464800996018,
+      "s11_dB": -18.9785774456824
+    },
+    {
+      "f_GHz": 152.0,
+      "Dmax_dBi": 8.994690679718891,
+      "rad_eff_dB": -0.9135947709393473,
+      "total_eff_dB": -0.994868356587197,
+      "Prad_W": 0.3976336861882924,
+      "realized_gain_dBi": 7.999822323131695,
+      "s11_dB": -17.318923366922586
+    },
+    {
+      "f_GHz": 153.0,
+      "Dmax_dBi": 8.882041205940697,
+      "rad_eff_dB": -0.9841171033761066,
+      "total_eff_dB": -1.1502168623218485,
+      "Prad_W": 0.38366158618022234,
+      "realized_gain_dBi": 7.7318243436188485,
+      "s11_dB": -14.256938950336895
+    },
+    {
+      "f_GHz": 154.0,
+      "Dmax_dBi": 8.746276164663948,
+      "rad_eff_dB": -1.06527259958442,
+      "total_eff_dB": -1.394186262928736,
+      "Prad_W": 0.36270319163194464,
+      "realized_gain_dBi": 7.352089901735211,
+      "s11_dB": -11.370442891747201
+    },
+    {
+      "f_GHz": 160.0,
+      "Dmax_dBi": 7.828630846828911,
+      "rad_eff_dB": -1.5433199792735066,
+      "total_eff_dB": -4.268835703786901,
+      "Prad_W": 0.1871054490794395,
+      "realized_gain_dBi": 3.5597951430420105,
+      "s11_dB": -3.315077442823171
+    },
+    {
+      "f_GHz": 170.0,
+      "Dmax_dBi": 6.199524987320445,
+      "rad_eff_dB": -1.677316816418043,
+      "total_eff_dB": -6.774660016993859,
+      "Prad_W": 0.10507611440141126,
+      "realized_gain_dBi": -0.5751350296734145,
+      "s11_dB": -1.6065941401878887
+    }
+  ],
+  "messages": [
+    {
+      "text": "Line impedance adaptation results found. Adaptive port meshing skipped.",
+      "type": "INFO"
+    },
+    {
+      "text": "This software is licensed for non-commercial use only.",
+      "type": "WARNING"
+    },
+    {
+      "text": "Using Generalized port mode solver.",
+      "type": "INFO"
+    },
+    {
+      "text": "Port mode solver: Detected dispersive material(s) at port 1. \nUsing a constant approximation of dispersive material(s) at 150 GHz and neglecting loss terms.  More...",
+      "type": "INFO"
+    },
+    {
+      "text": "Solver Settings:\nExcited port mode: 1 (1) \n[Frequency domain results normalized to default signal]\nExcitation duration: 1.77727437e-001 ns \nSteady state accuracy limit: -60 dB \nMaximum number of time steps: 454456 \nTime step width:\n     without subcycles: 7.821540359e-006 ns\n     used: 7.821540359e-006 ns\nNumber of threads used: 4",
+      "type": "INFO"
+    },
+    {
+      "text": "Steady state energy criterion met, solver finished successfully.",
+      "type": "INFO"
+    },
+    {
+      "text": "The Z and Y matrices have been successfully calculated.\nThe VSWR results have been successfully calculated.",
+      "type": "INFO"
+    },
+    {
+      "text": "Successfully finished Secondary Quantity Evaluation.",
+      "type": "INFO"
+    },
+    {
+      "text": "Creating parametric 1D results for Run ID 1",
+      "type": "INFO"
+    },
+    {
+      "text": "1 warning occurred.",
+      "type": "WARNING"
+    }
+  ]
+}

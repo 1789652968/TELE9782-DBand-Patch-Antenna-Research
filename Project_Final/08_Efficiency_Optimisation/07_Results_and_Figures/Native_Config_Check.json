@@ -1,0 +1,47 @@
+{
+  "checks": {
+    ".Sigma \"4.561e+007\"": true,
+    ".TanD \"loss_tangent\"": true,
+    ".Orientation \"ymin\"": true,
+    ".NumberOfModes \"1\"": true,
+    ".MonitorFarFieldsNearToModel \"False\"": true,
+    ".SteadyStateLimit \"-60\"": true,
+    ".CalculationType \"TD-S\"": true,
+    ".MeshType \"PBA\"": true,
+    "Solid.Add \"antenna:trunk\", \"antenna:patchleft\"": true,
+    "Solid.Add \"antenna:trunk\", \"antenna:patchright\"": true,
+    "continued_gold_conductors": true,
+    "real_polyimide": true,
+    "ground_substrate_signal_present": true
+  },
+  "log_evidence": [
+    "Using a constant approximation of dispersive material(s) at 150 GHz and neglecting loss terms.  More...",
+    "Number of parallel working threads: 6",
+    "Using a constant approximation of dispersive material(s) at 150 GHz and neglecting loss terms.  More...",
+    "2026-11-19 13:01:36   Steady state energy criterion met, solver finished successfully.",
+    "Number of mesh cells:             \t574464",
+    "2026-11-19 13:15:35   Line impedance adaptation results found. Adaptive port meshing skipped.",
+    "Using a constant approximation of dispersive material(s) at 150 GHz and neglecting loss terms.  More...",
+    "2026-11-19 13:21:28   Steady state energy criterion met, solver finished successfully.",
+    "Number of mesh cells:             \t574464"
+  ],
+  "port": [
+    "Ports\\port1 (50ohm_microstrip)"
+  ],
+  "monitors": [
+    "Field Monitors\\farfield (f=130)",
+    "Field Monitors\\farfield (f=140)",
+    "Field Monitors\\farfield (f=146)",
+    "Field Monitors\\farfield (f=147)",
+    "Field Monitors\\farfield (f=148)",
+    "Field Monitors\\farfield (f=149)",
+    "Field Monitors\\farfield (f=150)",
+    "Field Monitors\\farfield (f=151)",
+    "Field Monitors\\farfield (f=152)",
+    "Field Monitors\\farfield (f=153)",
+    "Field Monitors\\farfield (f=154)",
+    "Field Monitors\\farfield (f=160)",
+    "Field Monitors\\farfield (f=170)"
+  ],
+  "sample_count": 1001
+}

@@ -1,0 +1,16 @@
+{
+  "D_broadside_dBi": 8.841,
+  "theta_deg": 2.0,
+  "phi_deg": 82.0,
+  "sphere_mean": 0.9873453526828712,
+  "broadside_Ephi_dBi": 8.841,
+  "broadside_Etheta_dBi": -77.42,
+  "E_HPBW_deg": 104.52869352869352,
+  "E_low_deg": -47.238095238095234,
+  "E_high_deg": 57.29059829059829,
+  "E_other_forward_peak_relative_dB": null,
+  "H_HPBW_deg": 43.050724637681164,
+  "H_low_deg": -21.521739130434785,
+  "H_high_deg": 21.52898550724638,
+  "H_other_forward_peak_relative_dB": -17.16
+}

@@ -1,0 +1,23 @@
+{
+  "Gamma": {
+    "x": 150.0,
+    "real": 0.0,
+    "imag": 5149.5473474250975,
+    "xlabel": "Frequency / GHz",
+    "ylabel": "Propagation Constant / 1/m"
+  },
+  "Line Impedance": {
+    "x": 150.0,
+    "real": 69.4212864384407,
+    "imag": 0.0,
+    "xlabel": "Frequency / GHz",
+    "ylabel": "Impedance / Ohm"
+  },
+  "Effective Dielectric Constant": {
+    "x": 150.0,
+    "real": 2.683102489672924,
+    "imag": -0.0,
+    "xlabel": "Frequency / GHz",
+    "ylabel": ""
+  }
+}

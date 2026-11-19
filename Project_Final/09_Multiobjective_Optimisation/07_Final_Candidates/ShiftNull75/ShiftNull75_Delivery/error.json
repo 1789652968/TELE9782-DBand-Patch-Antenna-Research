@@ -1,0 +1,5 @@
+{
+  "error": "RuntimeError('Unable to determine project name. Is the Project still open?')",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\09_Automation\\Round2_Core.py\", line 98, in run\n    return finish_exports(p,folder,cfg,mode,source,start)\n  File \"D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\09_Automation\\Round2_Core.py\", line 52, in finish_exports\n    p.save();dump(folder/'round2.json',v);print('DONE',folder.name,round(v['eta'],3),v['theta'],round(v['G0'],3),round(v['S11_50'],2),flush=True);return v\nRuntimeError: Unable to determine project name. Is the Project still open?\n",
+  "time": 1795081029.6630936
+}

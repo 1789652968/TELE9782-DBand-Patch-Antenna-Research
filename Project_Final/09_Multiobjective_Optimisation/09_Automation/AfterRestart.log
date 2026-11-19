@@ -1,0 +1,120 @@
+JOB Nominal sensitivity attempt 1
+START Nominal sensitivity
+SOLVER_START D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\06_Advanced_Candidates\Manufacturing_Sensitivity\Nominal\Nominal.cst
+SOLVER_END 95.0 {'message': None, 'state': 'SUCCESS'}
+You are working in interactive mode.
+SUMMARY {"name": "Nominal", "project": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\06_Advanced_Candidates\\Manufacturing_Sensitivity\\Nominal\\Nominal.cst", "solver": {"message": null, "state": "SUCCESS"}, "f_min_s11_GHz": 153.8000030517578, "min_s11_dB": -29.97217536427391, "farfields": [{"f_GHz": 150.0, "Dmax_dBi": 9.327103213025365, "rad_eff_dB": -0.6494080731903733, "total_eff_dB": -0.9027646364049466, "Prad_W": 0.4061566241567961, "realized_gain_dBi": 8.42433857662042, "s11_dB": -12.46658399815788}]}
+PATTERN_EXPORTED 150
+DONE Nominal 86.111 20.0 7.751 -12.86
+JOB substrate_h_Low sensitivity attempt 1
+START substrate_h_Low sensitivity
+SOLVER_START D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\06_Advanced_Candidates\Manufacturing_Sensitivity\substrate_h_Low\substrate_h_Low.cst
+SOLVER_END 97.7 {'message': None, 'state': 'SUCCESS'}
+You are working in interactive mode.
+SUMMARY {"name": "substrate_h_Low", "project": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\06_Advanced_Candidates\\Manufacturing_Sensitivity\\substrate_h_Low\\substrate_h_Low.cst", "solver": {"message": null, "state": "SUCCESS"}, "f_min_s11_GHz": 154.1999969482422, "min_s11_dB": -29.814881732967955, "farfields": [{"f_GHz": 150.0, "Dmax_dBi": 9.313308458963986, "rad_eff_dB": -0.6573899181071772, "total_eff_dB": -0.9750761527562783, "Prad_W": 0.39944996648897535, "realized_gain_dBi": 8.338232306207708, "s11_dB": -11.51573484866107}]}
+PATTERN_EXPORTED 150
+DONE substrate_h_Low 85.953 18.0 7.716 -11.8
+JOB substrate_h_High sensitivity attempt 1
+START substrate_h_High sensitivity
+SOLVER_START D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\06_Advanced_Candidates\Manufacturing_Sensitivity\substrate_h_High\substrate_h_High.cst
+SOLVER_END 99.1 {'message': None, 'state': 'SUCCESS'}
+You are working in interactive mode.
+SUMMARY {"name": "substrate_h_High", "project": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\06_Advanced_Candidates\\Manufacturing_Sensitivity\\substrate_h_High\\substrate_h_High.cst", "solver": {"message": null, "state": "SUCCESS"}, "f_min_s11_GHz": 153.67999267578125, "min_s11_dB": -31.076218598755855, "farfields": [{"f_GHz": 150.0, "Dmax_dBi": 9.342285591643378, "rad_eff_dB": -0.6288775610269006, "total_eff_dB": -0.8580565500000084, "Prad_W": 0.4103593652166948, "realized_gain_dBi": 8.48422904164337, "s11_dB": -12.890181059440762}]}
+PATTERN_EXPORTED 150
+DONE substrate_h_High 86.519 20.0 7.763 -13.28
+JOB patch_length_Low sensitivity attempt 1
+START patch_length_Low sensitivity
+SOLVER_START D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\06_Advanced_Candidates\Manufacturing_Sensitivity\patch_length_Low\patch_length_Low.cst
+SOLVER_END 98.3 {'message': None, 'state': 'SUCCESS'}
+You are working in interactive mode.
+SUMMARY {"name": "patch_length_Low", "project": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\06_Advanced_Candidates\\Manufacturing_Sensitivity\\patch_length_Low\\patch_length_Low.cst", "solver": {"message": null, "state": "SUCCESS"}, "f_min_s11_GHz": 154.44000244140625, "min_s11_dB": -22.249502782711144, "farfields": [{"f_GHz": 150.0, "Dmax_dBi": 9.36018687635511, "rad_eff_dB": -0.6284656200936143, "total_eff_dB": -0.9795620749411924, "Prad_W": 0.39903757894719954, "realized_gain_dBi": 8.380624801413918, "s11_dB": -11.097943995251233}]}
+PATTERN_EXPORTED 150
+DONE patch_length_Low 86.527 18.0 7.73 -11.63
+JOB patch_length_High sensitivity attempt 1
+START patch_length_High sensitivity
+SOLVER_START D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\06_Advanced_Candidates\Manufacturing_Sensitivity\patch_length_High\patch_length_High.cst
+SOLVER_END 98.5 {'message': None, 'state': 'SUCCESS'}
+You are working in interactive mode.
+SUMMARY {"name": "patch_length_High", "project": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\06_Advanced_Candidates\\Manufacturing_Sensitivity\\patch_length_High\\patch_length_High.cst", "solver": {"message": null, "state": "SUCCESS"}, "f_min_s11_GHz": 153.24000549316406, "min_s11_dB": -35.90322778876016, "farfields": [{"f_GHz": 150.0, "Dmax_dBi": 9.278512128267174, "rad_eff_dB": -0.6703544652367153, "total_eff_dB": -0.8547926399132799, "Prad_W": 0.4106678838722745, "realized_gain_dBi": 8.423719488353893, "s11_dB": -13.811228456536398}]}
+PATTERN_EXPORTED 150
+DONE patch_length_High 85.697 20.0 7.726 -13.88
+JOB patch_width_Low sensitivity attempt 1
+START patch_width_Low sensitivity
+SOLVER_START D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\06_Advanced_Candidates\Manufacturing_Sensitivity\patch_width_Low\patch_width_Low.cst
+SOLVER_END 104.1 {'message': None, 'state': 'SUCCESS'}
+You are working in interactive mode.
+SUMMARY {"name": "patch_width_Low", "project": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\06_Advanced_Candidates\\Manufacturing_Sensitivity\\patch_width_Low\\patch_width_Low.cst", "solver": {"message": null, "state": "SUCCESS"}, "f_min_s11_GHz": 154.1999969482422, "min_s11_dB": -28.550068033040958, "farfields": [{"f_GHz": 150.0, "Dmax_dBi": 9.353434067354856, "rad_eff_dB": -0.6667699038132469, "total_eff_dB": -0.9719349397342028, "Prad_W": 0.3997389895771166, "realized_gain_dBi": 8.381499127620653, "s11_dB": -11.684185065664433}]}
+PATTERN_EXPORTED 150
+DONE patch_width_Low 85.768 20.0 7.694 -12.08
+JOB patch_width_High sensitivity attempt 1
+START patch_width_High sensitivity
+SOLVER_START D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\06_Advanced_Candidates\Manufacturing_Sensitivity\patch_width_High\patch_width_High.cst
+SOLVER_END 97.5 {'message': None, 'state': 'SUCCESS'}
+You are working in interactive mode.
+SUMMARY {"name": "patch_width_High", "project": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\06_Advanced_Candidates\\Manufacturing_Sensitivity\\patch_width_High\\patch_width_High.cst", "solver": {"message": null, "state": "SUCCESS"}, "f_min_s11_GHz": 153.44000244140625, "min_s11_dB": -29.956112153222122, "farfields": [{"f_GHz": 150.0, "Dmax_dBi": 9.324215524057317, "rad_eff_dB": -0.6531427119721902, "total_eff_dB": -0.8687544748203104, "Prad_W": 0.40934977579105236, "realized_gain_dBi": 8.455461049237007, "s11_dB": -13.14847816520923}]}
+PATTERN_EXPORTED 150
+DONE patch_width_High 86.037 20.0 7.766 -13.55
+JOB feed_width_Low sensitivity attempt 1
+START feed_width_Low sensitivity
+SOLVER_START D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\06_Advanced_Candidates\Manufacturing_Sensitivity\feed_width_Low\feed_width_Low.cst
+SOLVER_END 98.5 {'message': None, 'state': 'SUCCESS'}
+You are working in interactive mode.
+SUMMARY {"name": "feed_width_Low", "project": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\06_Advanced_Candidates\\Manufacturing_Sensitivity\\feed_width_Low\\feed_width_Low.cst", "solver": {"message": null, "state": "SUCCESS"}, "f_min_s11_GHz": 153.72000122070312, "min_s11_dB": -56.57693900080567, "farfields": [{"f_GHz": 150.0, "Dmax_dBi": 9.305383262025783, "rad_eff_dB": -0.6548664508688247, "total_eff_dB": -0.8726128987154569, "Prad_W": 0.4089862566553355, "realized_gain_dBi": 8.432770363310327, "s11_dB": -13.106750488315761}]}
+PATTERN_EXPORTED 150
+DONE feed_width_Low 86.003 20.0 7.772 -13.39
+JOB feed_width_High sensitivity attempt 1
+START feed_width_High sensitivity
+SOLVER_START D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\06_Advanced_Candidates\Manufacturing_Sensitivity\feed_width_High\feed_width_High.cst
+SOLVER_END 101.0 {'message': None, 'state': 'SUCCESS'}
+You are working in interactive mode.
+SUMMARY {"name": "feed_width_High", "project": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\06_Advanced_Candidates\\Manufacturing_Sensitivity\\feed_width_High\\feed_width_High.cst", "solver": {"message": null, "state": "SUCCESS"}, "f_min_s11_GHz": 153.9199981689453, "min_s11_dB": -24.57359480274544, "farfields": [{"f_GHz": 150.0, "Dmax_dBi": 9.344637018622391, "rad_eff_dB": -0.6476679756501, "total_eff_dB": -0.9437254992354285, "Prad_W": 0.4023439306717754, "realized_gain_dBi": 8.400911519386963, "s11_dB": -11.811269035677343}]}
+PATTERN_EXPORTED 150
+DONE feed_width_High 86.146 20.0 7.717 -12.21
+JOB metal_thickness_Low sensitivity attempt 1
+START metal_thickness_Low sensitivity
+SOLVER_START D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\06_Advanced_Candidates\Manufacturing_Sensitivity\metal_thickness_Low\metal_thickness_Low.cst
+SOLVER_END 98.2 {'message': None, 'state': 'SUCCESS'}
+You are working in interactive mode.
+SUMMARY {"name": "metal_thickness_Low", "project": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\06_Advanced_Candidates\\Manufacturing_Sensitivity\\metal_thickness_Low\\metal_thickness_Low.cst", "solver": {"message": null, "state": "SUCCESS"}, "f_min_s11_GHz": 153.8000030517578, "min_s11_dB": -29.95312658133102, "farfields": [{"f_GHz": 150.0, "Dmax_dBi": 9.326308323735942, "rad_eff_dB": -0.6495750196414392, "total_eff_dB": -0.9016209488876524, "Prad_W": 0.4062635970633324, "realized_gain_dBi": 8.424687374848288, "s11_dB": -12.488458960157836}]}
+PATTERN_EXPORTED 150
+DONE metal_thickness_Low 86.108 20.0 7.753 -12.89
+JOB metal_thickness_High sensitivity attempt 1
+START metal_thickness_High sensitivity
+SOLVER_START D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\06_Advanced_Candidates\Manufacturing_Sensitivity\metal_thickness_High\metal_thickness_High.cst
+SOLVER_END 97.9 {'message': None, 'state': 'SUCCESS'}
+You are working in interactive mode.
+SUMMARY {"name": "metal_thickness_High", "project": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\06_Advanced_Candidates\\Manufacturing_Sensitivity\\metal_thickness_High\\metal_thickness_High.cst", "solver": {"message": null, "state": "SUCCESS"}, "f_min_s11_GHz": 153.8000030517578, "min_s11_dB": -29.96538653188372, "farfields": [{"f_GHz": 150.0, "Dmax_dBi": 9.327974158581718, "rad_eff_dB": -0.6485828828865835, "total_eff_dB": -0.9035050455744731, "Prad_W": 0.4060873862391166, "realized_gain_dBi": 8.424469113007245, "s11_dB": -12.440604573698664}]}
+PATTERN_EXPORTED 150
+DONE metal_thickness_High 86.127 20.0 7.749 -12.83
+JOB eps_r_Low sensitivity attempt 1
+START eps_r_Low sensitivity
+SOLVER_START D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\06_Advanced_Candidates\Manufacturing_Sensitivity\eps_r_Low\eps_r_Low.cst
+SOLVER_END 98.7 {'message': None, 'state': 'SUCCESS'}
+You are working in interactive mode.
+SUMMARY {"name": "eps_r_Low", "project": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\06_Advanced_Candidates\\Manufacturing_Sensitivity\\eps_r_Low\\eps_r_Low.cst", "solver": {"message": null, "state": "SUCCESS"}, "f_min_s11_GHz": 155.1999969482422, "min_s11_dB": -29.52198068025737, "farfields": [{"f_GHz": 150.0, "Dmax_dBi": 9.383050631443224, "rad_eff_dB": -0.6202807888271875, "total_eff_dB": -0.9630228406553298, "Prad_W": 0.400560130858939, "realized_gain_dBi": 8.420027790787895, "s11_dB": -11.198413051039227}]}
+PATTERN_EXPORTED 150
+DONE eps_r_Low 86.691 18.0 7.839 -11.92
+JOB eps_r_High sensitivity attempt 1
+START eps_r_High sensitivity
+SOLVER_START D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\06_Advanced_Candidates\Manufacturing_Sensitivity\eps_r_High\eps_r_High.cst
+SOLVER_END 99.3 {'message': None, 'state': 'SUCCESS'}
+You are working in interactive mode.
+SUMMARY {"name": "eps_r_High", "project": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\06_Advanced_Candidates\\Manufacturing_Sensitivity\\eps_r_High\\eps_r_High.cst", "solver": {"message": null, "state": "SUCCESS"}, "f_min_s11_GHz": 152.44000244140625, "min_s11_dB": -30.248677489353952, "farfields": [{"f_GHz": 150.0, "Dmax_dBi": 9.244828568754269, "rad_eff_dB": -0.6796498315535984, "total_eff_dB": -0.826632397720765, "Prad_W": 0.41333936178338493, "realized_gain_dBi": 8.418196171033504, "s11_dB": -14.778468795252396}]}
+PATTERN_EXPORTED 150
+DONE eps_r_High 85.514 22.0 7.644 -14.82
+JOB loss_tangent_Low sensitivity attempt 1
+START loss_tangent_Low sensitivity
+SOLVER_START D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\06_Advanced_Candidates\Manufacturing_Sensitivity\loss_tangent_Low\loss_tangent_Low.cst
+SOLVER_END 99.3 {'message': None, 'state': 'SUCCESS'}
+You are working in interactive mode.
+SUMMARY {"name": "loss_tangent_Low", "project": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\06_Advanced_Candidates\\Manufacturing_Sensitivity\\loss_tangent_Low\\loss_tangent_Low.cst", "solver": {"message": null, "state": "SUCCESS"}, "f_min_s11_GHz": 153.8000030517578, "min_s11_dB": -30.616260972998077, "farfields": [{"f_GHz": 150.0, "Dmax_dBi": 9.32439426831227, "rad_eff_dB": -0.6173572602885081, "total_eff_dB": -0.8734504510344239, "Prad_W": 0.4089073898096021, "realized_gain_dBi": 8.450943817277848, "s11_dB": -12.42128068501568}]}
+PATTERN_EXPORTED 150
+DONE loss_tangent_Low 86.749 20.0 7.783 -12.81
+JOB loss_tangent_High sensitivity attempt 1
+START loss_tangent_High sensitivity
+SOLVER_START D:\TELE9782\Project_Final\09_Multiobjective_Optimisation\06_Advanced_Candidates\Manufacturing_Sensitivity\loss_tangent_High\loss_tangent_High.cst
+SOLVER_END 100.9 {'message': None, 'state': 'SUCCESS'}
+You are working in interactive mode.
+SUMMARY {"name": "loss_tangent_High", "project": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\06_Advanced_Candidates\\Manufacturing_Sensitivity\\loss_tangent_High\\loss_tangent_High.cst", "solver": {"message": null, "state": "SUCCESS"}, "f_min_s11_GHz": 153.8000030517578, "min_s11_dB": -29.378949764114004, "farfields": [{"f_GHz": 150.0, "Dmax_dBi": 9.329805326798303, "rad_eff_dB": -0.6814888064453274, "total_eff_dB": -0.9321568962011346, "Prad_W": 0.40341711079560705, "realized_gain_dBi": 8.397648430597169, "s11_dB": -12.511583871190261}]}
+PATTERN_EXPORTED 150
+DONE loss_tangent_High 85.477 20.0 7.719 -12.91

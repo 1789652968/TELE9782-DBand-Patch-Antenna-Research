@@ -1,0 +1,5 @@
+{
+  "error": "RuntimeError('An error occurred while trying to execute: ExportImage\\nThe message (ExportImage) cannot be dispatched: Connection has been closed!')",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\09_Automation\\Round2_Core.py\", line 78, in run\n    fields(p,folder,cfg);b.export_pattern(p,150,folder);m=p.model3d;ff=m.FarfieldPlot\n  File \"D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\09_Automation\\Array_Build.py\", line 220, in export_pattern\n    m.Plot.ExportImage(str(folder/f'Farfield_{f:g}_CST.png'),1400,1000)\nRuntimeError: An error occurred while trying to execute: ExportImage\nThe message (ExportImage) cannot be dispatched: Connection has been closed!\n",
+  "time": 1795062888.9165084
+}

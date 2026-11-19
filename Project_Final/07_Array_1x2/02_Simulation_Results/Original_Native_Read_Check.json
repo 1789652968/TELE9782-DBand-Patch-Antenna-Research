@@ -1,0 +1,44 @@
+{
+  "original_native_project": "D:\\TELE9782\\Project_Final\\01_CST_Project\\TELE9782_DBand_Patch_Final.cst",
+  "sweep_sample_count": 1001,
+  "S11_150GHz_native_dB": -13.424486159818068,
+  "reference_ohm": 49.468643576546214,
+  "maximum_native_vs_archived_trace_difference": 0.0,
+  "native_history_captions": [
+    "D-band radiating template",
+    "define material: Gold",
+    "define material: Polyimide (lossy)",
+    "Finite lossy inset patch with uniform port launch",
+    "Port, radiation boundary and solver accuracy",
+    "set PBA version",
+    "Matched-band farfield 146 GHz",
+    "Matched-band farfield 147 GHz",
+    "Matched-band farfield 148 GHz",
+    "Matched-band farfield 149 GHz",
+    "Matched-band farfield 151 GHz",
+    "Matched-band farfield 152 GHz",
+    "Matched-band farfield 153 GHz",
+    "Matched-band farfield 154 GHz",
+    "Evaluate farfields on global enclosing surface"
+  ],
+  "material_gold_sigma": true,
+  "near_model_farfield_disabled": true,
+  "saved_verification": {
+    "selected_working_project": "D:\\TELE9782\\Project_Final\\06_Working\\Box_Fine\\Box_Fine.cst",
+    "delivered_project": "D:\\TELE9782\\Project_Final\\01_CST_Project\\TELE9782_DBand_Patch_Final.cst",
+    "reopened_before_fresh_run": true,
+    "reopened_after_fresh_run": true,
+    "parameters_match": true,
+    "port_present": true,
+    "farfield_monitor_count": 13,
+    "S11_sample_count": 1001,
+    "reopen_max_complex_S11_difference": 0.0,
+    "rerun_max_complex_S11_difference": 4.985546416924428e-06,
+    "rerun_max_directivity_difference_dB": 2.96341473182693e-05,
+    "final_reopen_max_complex_S11_difference": 0.0,
+    "solver": {
+      "message": null,
+      "state": "SUCCESS"
+    }
+  }
+}

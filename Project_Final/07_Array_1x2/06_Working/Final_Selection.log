@@ -1,0 +1,13 @@
+ENGINEERING_SELECTION Refined
+Traceback (most recent call last):
+  File "D:\TELE9782\Project_Final\07_Array_1x2\04_Automation\Array_Final_Selection.py", line 32, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "D:\TELE9782\Project_Final\07_Array_1x2\04_Automation\Array_Final_Selection.py", line 30, in main
+    if not (R/'Verification.json').is_file():call('Array_Rerun.py','Final50')
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\TELE9782\Project_Final\07_Array_1x2\04_Automation\Array_Final_Selection.py", line 9, in call
+    subprocess.run([str(CST),'-u',str(AUTO/script),*args],stdout=f,stderr=subprocess.STDOUT,check=True)
+  File "C:\Users\Admin\AppData\Local\spyder-6\envs\spyder-runtime\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['D:\\TELE9782\\CST Studio Suite 2024\\Opera\\code\\bin\\python.exe', '-u', 'D:\\TELE9782\\Project_Final\\07_Array_1x2\\04_Automation\\Array_Rerun.py', 'Final50']' returned non-zero exit status 1.

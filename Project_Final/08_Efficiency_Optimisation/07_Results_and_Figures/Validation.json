@@ -1,0 +1,13 @@
+{
+  "touchstone_max_complex_error": 6.988396207710614e-08,
+  "max_branch_amplitude_difference_dB": 0.0009072376250315001,
+  "max_branch_phase_difference_deg": 0.0011513776410637117,
+  "sphere_mean": 1.0007061715285772,
+  "residual_pct": 0.356293570123825,
+  "solver": {
+    "message": null,
+    "state": "SUCCESS"
+  },
+  "original_saved_efficiency": 71.98103786867034,
+  "skin_depth_um": 0.19241745491940687
+}

@@ -1,0 +1,16 @@
+{
+  "trials": 68,
+  "screen": 39,
+  "finalists": 4,
+  "unique_selected": 3,
+  "recommended": {
+    "replace_round_1": false,
+    "project": "D:\\TELE9782\\Project_Final\\08_Efficiency_Optimisation\\06_Final_Candidate\\TELE9782_DBand_Efficiency_Final\\TELE9782_DBand_Efficiency_Final.cst",
+    "candidate": "H085_Delivery",
+    "baseline_score": 7.95693153851504,
+    "new_score": 7.3274155214385726,
+    "rule": "score improves by >0.25, eta >= baseline minus 0.5 pp, and either theta <=8 deg or +Z gain improves by >=0.15 dB",
+    "sha256": "2030cb97b1ef2eb6c17ed60dcfb91eaf0d6838e38425c55beeb807cefc2f14fd"
+  },
+  "fullsphere_and_ports_verified": true
+}

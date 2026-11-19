@@ -1,0 +1,251 @@
+{
+  "name": "ShiftBracket85",
+  "project": "D:\\TELE9782\\Project_Final\\09_Multiobjective_Optimisation\\05_Beam_Optimisation\\ShiftBracket85\\ShiftBracket85.cst",
+  "solver": {
+    "message": null,
+    "state": "SUCCESS"
+  },
+  "f_min_s11_GHz": 153.16000366210938,
+  "min_s11_dB": -26.779332981921172,
+  "farfields": [
+    {
+      "f_GHz": 130.0,
+      "Dmax_dBi": 9.172275096779103,
+      "rad_eff_dB": -0.8351363250825921,
+      "total_eff_dB": -2.6726313109123563,
+      "Prad_W": 0.27021339450765186,
+      "realized_gain_dBi": 6.499643785866745,
+      "s11_dB": -4.621983743248446
+    },
+    {
+      "f_GHz": 140.0,
+      "Dmax_dBi": 8.806926471498862,
+      "rad_eff_dB": -0.613141459333162,
+      "total_eff_dB": -1.3262419622338948,
+      "Prad_W": 0.36842221402805253,
+      "realized_gain_dBi": 7.480684509264968,
+      "s11_dB": -8.19800751771272
+    },
+    {
+      "f_GHz": 146.0,
+      "Dmax_dBi": 8.755157042535936,
+      "rad_eff_dB": -0.5644515498179341,
+      "total_eff_dB": -1.1115268082630347,
+      "Prad_W": 0.38709478770325034,
+      "realized_gain_dBi": 7.6436302342729014,
+      "s11_dB": -9.268038278269614
+    },
+    {
+      "f_GHz": 147.0,
+      "Dmax_dBi": 8.739488447253866,
+      "rad_eff_dB": -0.5668166260519041,
+      "total_eff_dB": -1.0548920133111956,
+      "Prad_W": 0.39217581071401963,
+      "realized_gain_dBi": 7.684596433942669,
+      "s11_dB": -9.73472687504856
+    },
+    {
+      "f_GHz": 148.0,
+      "Dmax_dBi": 8.71692657898822,
+      "rad_eff_dB": -0.5755288750928527,
+      "total_eff_dB": -0.9899937720178548,
+      "Prad_W": 0.3980802460735887,
+      "realized_gain_dBi": 7.726932806970366,
+      "s11_dB": -10.408550159776786
+    },
+    {
+      "f_GHz": 149.0,
+      "Dmax_dBi": 8.679890893577415,
+      "rad_eff_dB": -0.5901958402576247,
+      "total_eff_dB": -0.9177774298447865,
+      "Prad_W": 0.40475503633548154,
+      "realized_gain_dBi": 7.762113463732629,
+      "s11_dB": -11.387409453527617
+    },
+    {
+      "f_GHz": 150.0,
+      "Dmax_dBi": 8.62747056772773,
+      "rad_eff_dB": -0.6101958698741576,
+      "total_eff_dB": -0.8411955983425877,
+      "Prad_W": 0.41195563187162637,
+      "realized_gain_dBi": 7.786274969385143,
+      "s11_dB": -12.856717332040624
+    },
+    {
+      "f_GHz": 151.0,
+      "Dmax_dBi": 8.560213143050433,
+      "rad_eff_dB": -0.6366800917514859,
+      "total_eff_dB": -0.7699038131362852,
+      "Prad_W": 0.4187739159000312,
+      "realized_gain_dBi": 7.790309329914146,
+      "s11_dB": -15.19846912371573
+    },
+    {
+      "f_GHz": 152.0,
+      "Dmax_dBi": 8.489076238794064,
+      "rad_eff_dB": -0.6726281403429539,
+      "total_eff_dB": -0.7236325433044232,
+      "Prad_W": 0.4232595345361848,
+      "realized_gain_dBi": 7.765443695489642,
+      "s11_dB": -19.327243843324943
+    },
+    {
+      "f_GHz": 153.0,
+      "Dmax_dBi": 8.434570027514116,
+      "rad_eff_dB": -0.7205751217386956,
+      "total_eff_dB": -0.7304628858623121,
+      "Prad_W": 0.4225943786303758,
+      "realized_gain_dBi": 7.704107141651804,
+      "s11_dB": -26.4318060054771
+    },
+    {
+      "f_GHz": 154.0,
+      "Dmax_dBi": 8.410994136915132,
+      "rad_eff_dB": -0.7801994930649281,
+      "total_eff_dB": -0.81991146920505,
+      "Prad_W": 0.41397952072979755,
+      "realized_gain_dBi": 7.591082667710082,
+      "s11_dB": -20.408469072596795
+    },
+    {
+      "f_GHz": 160.0,
+      "Dmax_dBi": 8.270029406180448,
+      "rad_eff_dB": -1.1948213614686778,
+      "total_eff_dB": -3.1971715621857486,
+      "Prad_W": 0.239470956084453,
+      "realized_gain_dBi": 5.072857843994699,
+      "s11_dB": -4.325218812856602
+    },
+    {
+      "f_GHz": 170.0,
+      "Dmax_dBi": 5.31368489523742,
+      "rad_eff_dB": -1.4771468052306689,
+      "total_eff_dB": -5.84841632901048,
+      "Prad_W": 0.13005539469607652,
+      "realized_gain_dBi": -0.5347314337730606,
+      "s11_dB": -1.9756013036998745
+    }
+  ],
+  "messages": [
+    {
+      "text": "This software is licensed for non-commercial use only.",
+      "type": "WARNING"
+    },
+    {
+      "text": "CAD processing via DLL",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD Processing Version Info\n    ACIS version installed:    33.0.1\n    ACIS version used:    33.0.1",
+      "type": "INFO"
+    },
+    {
+      "text": "Starting adaptive port meshing.",
+      "type": "INFO"
+    },
+    {
+      "text": "Mode calculation for port 1:",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD processing via DLL",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD Processing Version Info\n    ACIS version installed:    33.0.1\n    ACIS version used:    33.0.1",
+      "type": "INFO"
+    },
+    {
+      "text": "Using Generalized port mode solver.",
+      "type": "INFO"
+    },
+    {
+      "text": "Port mode solver: Detected dispersive material(s) at port 1. \nUsing a constant approximation of dispersive material(s) at 150 GHz and neglecting loss terms.  More...",
+      "type": "INFO"
+    },
+    {
+      "text": "Pass 1 successfully completed.",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD processing via DLL",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD Processing Version Info\n    ACIS version installed:    33.0.1\n    ACIS version used:    33.0.1",
+      "type": "INFO"
+    },
+    {
+      "text": "Pass 2 successfully completed. Delta (Line Imp.): 0.07%",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD processing via DLL",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD Processing Version Info\n    ACIS version installed:    33.0.1\n    ACIS version used:    33.0.1",
+      "type": "INFO"
+    },
+    {
+      "text": "Pass 3 successfully completed. Delta (Line Imp.): 0.08%",
+      "type": "INFO"
+    },
+    {
+      "text": "Adaptive port meshing finished.",
+      "type": "INFO"
+    },
+    {
+      "text": "This software is licensed for non-commercial use only.",
+      "type": "WARNING"
+    },
+    {
+      "text": "CAD processing via DLL",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD Processing Version Info\n    ACIS version installed:    33.0.1\n    ACIS version used:    33.0.1",
+      "type": "INFO"
+    },
+    {
+      "text": "Matrix computation (PBA)\n    [Perfect Boundary Approximation (PBA), version: default]\n    [GPU acceleration: off (by user)]\nMore...",
+      "type": "INFO"
+    },
+    {
+      "text": "Geometry representation: compact",
+      "type": "INFO"
+    },
+    {
+      "text": "Using Generalized port mode solver.",
+      "type": "INFO"
+    },
+    {
+      "text": "Port mode solver: Detected dispersive material(s) at port 1. \nUsing a constant approximation of dispersive material(s) at 150 GHz and neglecting loss terms.  More...",
+      "type": "INFO"
+    },
+    {
+      "text": "Solver Settings:\nExcited port mode: 1 (1) \n[Frequency domain results normalized to default signal]\nExcitation duration: 1.77727437e-001 ns \nSteady state accuracy limit: -60 dB \nMaximum number of time steps: 63789 \nTime step width:\n     without subcycles: 5.572302242e-005 ns\n     used: 5.572302242e-005 ns\nNumber of threads used: 4",
+      "type": "INFO"
+    },
+    {
+      "text": "Steady state energy criterion met, solver finished successfully.",
+      "type": "INFO"
+    },
+    {
+      "text": "The Z and Y matrices have been successfully calculated.\nThe VSWR results have been successfully calculated.",
+      "type": "INFO"
+    },
+    {
+      "text": "Successfully finished Secondary Quantity Evaluation.",
+      "type": "INFO"
+    },
+    {
+      "text": "Creating parametric 1D results for Run ID 1",
+      "type": "INFO"
+    },
+    {
+      "text": "2 warnings occurred.",
+      "type": "WARNING"
+    }
+  ]
+}
