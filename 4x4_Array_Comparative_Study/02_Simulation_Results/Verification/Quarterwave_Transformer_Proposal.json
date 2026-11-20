@@ -1,0 +1,14 @@
+{
+  "settings": {
+    "extension_l50_mm": 0.554,
+    "extension_lq_mm": 0.31,
+    "extension_match_width_mm": 0.69
+  },
+  "approximation": {
+    "load_r": 6.767997780532975,
+    "load_x": -2.6352776233282,
+    "transmission_line_Z_ohm": 18.44664995942287,
+    "predicted_s11_50ohm_dB": -41.420624844660274
+  },
+  "source": "Native initial input impedance; uniform-line model calibrated to native port ref"
+}

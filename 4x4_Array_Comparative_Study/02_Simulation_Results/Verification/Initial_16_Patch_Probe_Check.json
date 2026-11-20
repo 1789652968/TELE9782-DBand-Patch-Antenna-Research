@@ -1,0 +1,7 @@
+{
+  "connected_patch_probes": 16,
+  "minimum_Ez_Vm": 2543.5859966999938,
+  "maximum_Ez_Vm": 6798.1613234295255,
+  "magnitude_spread_dB": 8.538900819851987,
+  "maximum_abs_relative_phase_deg": 22.738241771976284
+}

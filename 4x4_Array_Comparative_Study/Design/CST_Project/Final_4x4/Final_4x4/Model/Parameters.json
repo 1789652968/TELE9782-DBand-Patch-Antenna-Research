@@ -1,0 +1,150 @@
+{
+    "parameters": [
+        {
+            "expr": "0.667",
+            "name": "patch_width",
+            "value": "0.667"
+        },
+        {
+            "expr": "0.5148",
+            "name": "patch_length",
+            "value": "0.5148"
+        },
+        {
+            "expr": "0.075",
+            "name": "substrate_h",
+            "value": "0.075"
+        },
+        {
+            "expr": "0.002",
+            "name": "metal_thickness",
+            "value": "0.002"
+        },
+        {
+            "expr": "3.5",
+            "name": "eps_r",
+            "value": "3.5"
+        },
+        {
+            "expr": "0.0027",
+            "name": "loss_tangent",
+            "value": "0.0027"
+        },
+        {
+            "expr": "0.1688",
+            "name": "feed_width",
+            "value": "0.1688"
+        },
+        {
+            "expr": "0.1031",
+            "name": "transformer_width",
+            "value": "0.1031"
+        },
+        {
+            "expr": "0.28",
+            "name": "transformer_length",
+            "value": "0.28"
+        },
+        {
+            "expr": "0.165",
+            "name": "inset_length",
+            "value": "0.165"
+        },
+        {
+            "expr": "0.02",
+            "name": "inset_gap",
+            "value": "0.02"
+        },
+        {
+            "expr": "0.25",
+            "name": "port_halfwidth",
+            "value": "0.25"
+        },
+        {
+            "expr": "0.5",
+            "name": "launch_length",
+            "value": "0.5"
+        },
+        {
+            "expr": "1.12",
+            "name": "pitch_x",
+            "value": "1.12"
+        },
+        {
+            "expr": "1.25",
+            "name": "pitch_y",
+            "value": "1.25"
+        },
+        {
+            "expr": "0.235",
+            "name": "stage3_separation",
+            "value": "0.235"
+        },
+        {
+            "expr": "0.225",
+            "name": "inlet_rail_separation",
+            "value": "0.225"
+        },
+        {
+            "expr": "0.405",
+            "name": "stage4_offset",
+            "value": "0.405"
+        },
+        {
+            "expr": "-2.24",
+            "name": "row_split_x",
+            "value": "-2.24"
+        },
+        {
+            "expr": "-2.9",
+            "name": "first_split_x",
+            "value": "-2.9"
+        },
+        {
+            "expr": "-3.12",
+            "name": "board_x_min",
+            "value": "-3.12"
+        },
+        {
+            "expr": "2.4",
+            "name": "board_x_max",
+            "value": "2.4"
+        },
+        {
+            "expr": "23",
+            "name": "mesh_near",
+            "value": "23"
+        },
+        {
+            "expr": "33",
+            "name": "mesh_box",
+            "value": "33"
+        },
+        {
+            "expr": "0.17",
+            "name": "match_start",
+            "value": "0.17"
+        },
+        {
+            "expr": "0.14",
+            "name": "match_length",
+            "value": "0.14"
+        },
+        {
+            "expr": "0.045",
+            "name": "match_width",
+            "value": "0.045"
+        },
+        {
+            "expr": "-3.62",
+            "name": "port_x",
+            "value": "-3.62"
+        },
+        {
+            "expr": "-0.865",
+            "name": "port_y",
+            "value": "-0.865"
+        }
+    ],
+    "version": 1
+}

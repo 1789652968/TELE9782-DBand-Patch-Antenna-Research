@@ -18,3 +18,10 @@
 | [Project_Final/09_Multiobjective_Optimisation/08_Results_and_Figures/Multiobjective_Comparison.csv](../Project_Final/09_Multiobjective_Optimisation/08_Results_and_Figures/Multiobjective_Comparison.csv) | 最终性能含历史对照 | 交付 round2.json 及第一轮验证 | Discussion | 是，附口径与证据 |
 | [Project_Final/09_Multiobjective_Optimisation/08_Results_and_Figures/Pareto_Tradeoff.png](../Project_Final/09_Multiobjective_Optimisation/08_Results_and_Figures/Pareto_Tradeoff.png) | 可行设计的多指标取舍 | All_Optimisation_Trials.csv | Optimisation | 是，附口径与证据 |
 | [Project_Final/09_Multiobjective_Optimisation/08_Results_and_Figures/Manufacturing_Sensitivity.csv](../Project_Final/09_Multiobjective_Optimisation/08_Results_and_Figures/Manufacturing_Sensitivity.csv) | 公差扫描含标称 | 同筛选网格 OAT 工程 | Sensitivity | 是，附口径与证据 |
+
+## 4×4 comparative study
+
+- [4×4 figure index](../4x4_Array_Comparative_Study/Figures/FIGURE_INDEX.md) labels the CST geometry, feed/port layout, S11, 3D farfield and realized gain, E/H cuts, surface current, near-inset fields, power and mesh.
+- [Performance comparison CSV](../4x4_Array_Comparative_Study/03_Comparison/Array_1x2_vs_4x4_Comparison.csv) is the traceable source for values in the comparative-study results table.
+- [Matching trials](../4x4_Array_Comparative_Study/02_Simulation_Results/Verification/Matching_Trials.csv) and [mesh sensitivity](../4x4_Array_Comparative_Study/02_Simulation_Results/Verification/Mesh_Sensitivity.csv) support the methods and the validation sections.
+- [Power Balance 150 GHz](../4x4_Array_Comparative_Study/02_Simulation_Results/Power_Loss/Power_Balance_150.csv) supplies both native mW and relative loss figures for discussion.

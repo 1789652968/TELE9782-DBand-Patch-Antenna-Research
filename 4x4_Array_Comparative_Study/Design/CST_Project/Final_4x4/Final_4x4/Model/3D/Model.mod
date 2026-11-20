@@ -1,0 +1,2446 @@
+'# MWS Version: Version 2024.0 - Sep 01 2023 - ACIS 33.0.1 -
+
+'# length = mm
+'# frequency = GHz
+'# time = ns
+'# frequency range: fmin = 130 fmax = 170
+'# created = '[VERSION]2024.0|33.0.1|20230901[/VERSION]
+
+
+'@ D-band radiating template
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+'set the units
+With Units
+    .SetUnit "Length", "mm"
+    .SetUnit "Frequency", "GHz"
+    .SetUnit "Voltage", "V"
+    .SetUnit "Resistance", "Ohm"
+    .SetUnit "Inductance", "nH"
+    .SetUnit "Temperature",  "K"
+    .SetUnit "Time", "ns"
+    .SetUnit "Current", "A"
+    .SetUnit "Conductance", "S"
+    .SetUnit "Capacitance", "pF"
+End With
+
+'----------------------------------------------------------------------------
+
+'set the frequency range
+Solver.FrequencyRange "130", "170"
+
+'----------------------------------------------------------------------------
+
+Plot.DrawBox True
+
+With Background
+     .Type "Normal"
+     .Epsilon "1.0"
+     .Mu "1.0"
+     .XminSpace "0.0"
+     .XmaxSpace "0.0"
+     .YminSpace "0.0"
+     .YmaxSpace "0.0"
+     .ZminSpace "0.0"
+     .ZmaxSpace "0.0"
+End With
+
+With Boundary
+     .Xmin "expanded open"
+     .Xmax "expanded open"
+     .Ymin "expanded open"
+     .Ymax "expanded open"
+     .Zmin "expanded open"
+     .Zmax "expanded open"
+     .Xsymmetry "none"
+     .Ysymmetry "none"
+     .Zsymmetry "none"
+End With
+
+' switch on FD-TET setting for accurate farfields
+
+FDSolver.ExtrudeOpenBC "True"
+
+Mesh.FPBAAvoidNonRegUnite "True"
+Mesh.ConsiderSpaceForLowerMeshLimit "False"
+Mesh.MinimumStepNumber "5"
+
+With MeshSettings
+     .SetMeshType "Hex"
+     .Set "RatioLimitGeometry", "20"
+End With
+
+With MeshSettings
+     .SetMeshType "HexTLM"
+     .Set "RatioLimitGeometry", "20"
+End With
+
+PostProcess1D.ActivateOperation "vswr", "true"
+PostProcess1D.ActivateOperation "yz-matrices", "true"
+
+With FarfieldPlot
+	.ClearCuts ' lateral=phi, polar=theta
+	.AddCut "lateral", "0", "1"
+	.AddCut "lateral", "90", "1"
+	.AddCut "polar", "90", "1"
+End With
+
+'----------------------------------------------------------------------------
+
+Dim sDefineAt As String
+sDefineAt = "130;140;150;160;170"
+Dim sDefineAtName As String
+sDefineAtName = "130;140;150;160;170"
+Dim sDefineAtToken As String
+sDefineAtToken = "f="
+Dim aFreq() As String
+aFreq = Split(sDefineAt, ";")
+Dim aNames() As String
+aNames = Split(sDefineAtName, ";")
+
+Dim nIndex As Integer
+For nIndex = LBound(aFreq) To UBound(aFreq)
+
+Dim zz_val As String
+zz_val = aFreq (nIndex)
+Dim zz_name As String
+zz_name = sDefineAtToken & aNames (nIndex)
+
+' Define E-Field Monitors
+With Monitor
+    .Reset
+    .Name "e-field ("& zz_name &")"
+    .Dimension "Volume"
+    .Domain "Frequency"
+    .FieldType "Efield"
+    .MonitorValue  zz_val
+    .Create
+End With
+
+' Define H-Field Monitors
+With Monitor
+    .Reset
+    .Name "h-field ("& zz_name &")"
+    .Dimension "Volume"
+    .Domain "Frequency"
+    .FieldType "Hfield"
+    .MonitorValue  zz_val
+    .Create
+End With
+
+' Define Farfield Monitors
+With Monitor
+    .Reset
+    .Name "farfield ("& zz_name &")"
+    .Domain "Frequency"
+    .FieldType "Farfield"
+    .MonitorValue  zz_val
+    .ExportFarfieldSource "False"
+    .Create
+End With
+
+Next
+
+'----------------------------------------------------------------------------
+
+With MeshSettings
+     .SetMeshType "Hex"
+     .Set "Version", 1%
+End With
+
+With Mesh
+     .MeshType "PBA"
+End With
+
+'set the solver type
+ChangeSolverType("HF Time Domain")
+
+'----------------------------------------------------------------------------
+
+'@ define material: Gold
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Material
+     .Reset
+     .Name "Gold"
+     .Folder ""
+     .FrqType "static"
+     .Type "Normal"
+     .SetMaterialUnit "Hz", "mm"
+     .Epsilon "1"
+     .Mu "1.0"
+     .Kappa "4.561e+007"
+     .TanD "0.0"
+     .TanDFreq "0.0"
+     .TanDGiven "False"
+     .TanDModel "ConstTanD"
+     .KappaM "0"
+     .TanDM "0.0"
+     .TanDMFreq "0.0"
+     .TanDMGiven "False"
+     .TanDMModel "ConstTanD"
+     .DispModelEps "None"
+     .DispModelMu "None"
+     .DispersiveFittingSchemeEps "General 1st"
+     .DispersiveFittingSchemeMu "General 1st"
+     .UseGeneralDispersionEps "False"
+     .UseGeneralDispersionMu "False"
+     .FrqType "all"
+     .Type "Lossy metal"
+     .MaterialUnit "Frequency", "GHz"
+     .MaterialUnit "Geometry", "mm"
+     .MaterialUnit "Time", "s"
+     .MaterialUnit "Temperature", "Kelvin"
+     .Mu "1.0"
+     .Sigma "4.561e+007"
+     .Rho "19320.0"
+     .ThermalType "Normal"
+     .ThermalConductivity "314.0"
+     .SpecificHeat "130", "J/K/kg"
+     .MetabolicRate "0"
+     .BloodFlow "0"
+     .VoxelConvection "0"
+     .MechanicsType "Isotropic"
+     .YoungsModulus "78"
+     .PoissonsRatio "0.42"
+     .ThermalExpansionRate "14"
+     .ReferenceCoordSystem "Global"
+     .CoordSystemType "Cartesian"
+     .NLAnisotropy "False"
+     .NLAStackingFactor "1"
+     .NLADirectionX "1"
+     .NLADirectionY "0"
+     .NLADirectionZ "0"
+     .Colour "1", "1", "0"
+     .Wireframe "False"
+     .Reflection "False"
+     .Allowoutline "True"
+     .Transparentoutline "False"
+     .Transparency "0"
+     .Create
+End With
+
+'@ define material: Polyimide (lossy)
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Material
+     .Reset
+     .Name "Polyimide (lossy)"
+     .Folder ""
+     .FrqType "all"
+     .Type "Normal"
+     .SetMaterialUnit "GHz", "mm"
+     .Epsilon "eps_r"
+     .Mu "1.0"
+     .Kappa "0.0"
+     .TanD "loss_tangent"
+     .TanDFreq "150"
+     .TanDGiven "True"
+     .TanDModel "ConstTanD"
+     .KappaM "0.0"
+     .TanDM "0.0"
+     .TanDMFreq "0.0"
+     .TanDMGiven "False"
+     .TanDMModel "ConstKappa"
+     .DispModelEps "None"
+     .DispModelMu "None"
+     .DispersiveFittingSchemeEps "General 1st"
+     .DispersiveFittingSchemeMu "General 1st"
+     .UseGeneralDispersionEps "False"
+     .UseGeneralDispersionMu "False"
+     .Rho "1400.0"
+     .ThermalType "Normal"
+     .ThermalConductivity "0.20"
+     .SpecificHeat "1000", "J/K/kg"
+     .SetActiveMaterial "all"
+     .MechanicsType "Isotropic"
+     .YoungsModulus "2.5"
+     .PoissonsRatio "0.4"
+     .ThermalExpansionRate "25"
+     .Colour "0.94", "0.82", "0.76"
+     .Wireframe "False"
+     .Transparency "0"
+     .Create
+End With
+
+'@ Solid board and uniform port launch
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+Component.New "antenna"
+With Brick
+.Reset
+.Name "ground"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-3.12", "2.4"
+.Yrange "-3.04", "2.4924"
+.Zrange "-metal_thickness", "0"
+.Create
+End With
+With Brick
+.Reset
+.Name "launch_ground"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-3.62", "-3.12"
+.Yrange "port_y-port_halfwidth", "port_y+port_halfwidth"
+.Zrange "-metal_thickness", "0"
+.Create
+End With
+Solid.Add "antenna:ground","antenna:launch_ground"
+With Brick
+.Reset
+.Name "substrate"
+.Component "antenna"
+.Material "Polyimide (lossy)"
+.Xrange "-3.12", "2.4"
+.Yrange "-3.04", "2.4924"
+.Zrange "0", "substrate_h"
+.Create
+End With
+With Brick
+.Reset
+.Name "launch_substrate"
+.Component "antenna"
+.Material "Polyimide (lossy)"
+.Xrange "-3.62", "-3.12"
+.Yrange "port_y-port_halfwidth", "port_y+port_halfwidth"
+.Zrange "0", "substrate_h"
+.Create
+End With
+Solid.Add "antenna:substrate","antenna:launch_substrate"
+
+'@ Signal trunk
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "trunk"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-3.62", "-3.45"
+.Yrange "-0.9494", "-0.7806"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal input_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "input_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-3.45", "-3.31"
+.Yrange "-0.8875", "-0.8425"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal input_to_divider
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "input_to_divider"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-3.31", "-2.8156"
+.Yrange "-0.9494", "-0.7806"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level1_0_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level1_0_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-2.95155", "-2.8484499999999997"
+.Yrange "-1.145", "-0.865"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level1_0_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level1_0_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-2.9844", "-2.8156"
+.Yrange "-2.1994000000000002", "-1.145"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal group_run_0
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "group_run_0"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-2.9", "-2.1556"
+.Yrange "-2.1994000000000002", "-2.0306"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level2_0_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level2_0_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-2.2915500000000004", "-2.18845"
+.Yrange "-2.3950000000000005", "-2.115"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level2_0_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level2_0_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-2.3244000000000002", "-2.1556"
+.Yrange "-2.8244000000000002", "-2.3950000000000005"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal row_rail_0
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "row_rail_0"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-2.24", "0.0844"
+.Yrange "-2.8244000000000002", "-2.6556"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal row_entry_0
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "row_entry_0"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-0.0844", "0.0844"
+.Yrange "-2.74", "-2.4306"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level3_0_0_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level3_0_0_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-0.28", "0"
+.Yrange "-2.5665500000000003", "-2.46345"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level3_0_0_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level3_0_0_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.2044000000000001", "-0.28"
+.Yrange "-2.5994", "-2.4306"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal row_rise_0_0
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "row_rise_0_0"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.2044000000000001", "-1.0356"
+.Yrange "-2.515", "-2.1956"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r1c1_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r1c1_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.4000000000000001", "-1.12"
+.Yrange "-2.3315500000000005", "-2.22845"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r1c1_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r1c1_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.7644000000000002", "-1.4000000000000001"
+.Yrange "-2.3644000000000003", "-2.1956"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal inset_r1c1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "inset_r1c1"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.7644000000000002", "-1.5956000000000001"
+.Yrange "-2.2800000000000002", "-1.9674"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal patch_r1c1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "patch_r1c1"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-2.0135", "-1.3465000000000003"
+.Yrange "-2.1324", "-1.6176"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+With Brick
+.Reset
+.Name "patch_r1c1_cut0"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "-1.7844000000000002", "-1.7644000000000002"
+.Yrange "-2.1324", "-1.9674"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r1c1","antenna:patch_r1c1_cut0"
+With Brick
+.Reset
+.Name "patch_r1c1_cut1"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "-1.5956000000000001", "-1.5756000000000001"
+.Yrange "-2.1324", "-1.9674"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r1c1","antenna:patch_r1c1_cut1"
+
+'@ Signal level4_r1c2_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r1c2_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.12", "-0.8400000000000001"
+.Yrange "-2.3315500000000005", "-2.22845"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r1c2_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r1c2_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-0.8400000000000001", "-0.4756"
+.Yrange "-2.3644000000000003", "-2.1956"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal inset_r1c2
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "inset_r1c2"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-0.6444000000000001", "-0.4756"
+.Yrange "-2.2800000000000002", "-1.9674"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal patch_r1c2
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "patch_r1c2"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-0.8935000000000001", "-0.22650000000000003"
+.Yrange "-2.1324", "-1.6176"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+With Brick
+.Reset
+.Name "patch_r1c2_cut0"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "-0.6644000000000001", "-0.6444000000000001"
+.Yrange "-2.1324", "-1.9674"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r1c2","antenna:patch_r1c2_cut0"
+With Brick
+.Reset
+.Name "patch_r1c2_cut1"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "-0.4756", "-0.4556"
+.Yrange "-2.1324", "-1.9674"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r1c2","antenna:patch_r1c2_cut1"
+
+'@ Signal level3_0_1_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level3_0_1_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0", "0.28"
+.Yrange "-2.5665500000000003", "-2.46345"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level3_0_1_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level3_0_1_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0.28", "1.2044000000000001"
+.Yrange "-2.5994", "-2.4306"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal row_rise_0_1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "row_rise_0_1"
+.Component "antenna"
+.Material "Gold"
+.Xrange "1.0356", "1.2044000000000001"
+.Yrange "-2.515", "-2.1956"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r1c3_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r1c3_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0.8400000000000001", "1.12"
+.Yrange "-2.3315500000000005", "-2.22845"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r1c3_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r1c3_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0.4756", "0.8400000000000001"
+.Yrange "-2.3644000000000003", "-2.1956"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal inset_r1c3
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "inset_r1c3"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0.4756", "0.6444000000000001"
+.Yrange "-2.2800000000000002", "-1.9674"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal patch_r1c3
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "patch_r1c3"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0.22650000000000003", "0.8935000000000001"
+.Yrange "-2.1324", "-1.6176"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+With Brick
+.Reset
+.Name "patch_r1c3_cut0"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "0.4556", "0.4756"
+.Yrange "-2.1324", "-1.9674"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r1c3","antenna:patch_r1c3_cut0"
+With Brick
+.Reset
+.Name "patch_r1c3_cut1"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "0.6444000000000001", "0.6644000000000001"
+.Yrange "-2.1324", "-1.9674"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r1c3","antenna:patch_r1c3_cut1"
+
+'@ Signal level4_r1c4_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r1c4_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "1.12", "1.4000000000000001"
+.Yrange "-2.3315500000000005", "-2.22845"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r1c4_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r1c4_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "1.4000000000000001", "1.7644000000000002"
+.Yrange "-2.3644000000000003", "-2.1956"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal inset_r1c4
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "inset_r1c4"
+.Component "antenna"
+.Material "Gold"
+.Xrange "1.5956000000000001", "1.7644000000000002"
+.Yrange "-2.2800000000000002", "-1.9674"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal patch_r1c4
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "patch_r1c4"
+.Component "antenna"
+.Material "Gold"
+.Xrange "1.3465000000000003", "2.0135"
+.Yrange "-2.1324", "-1.6176"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+With Brick
+.Reset
+.Name "patch_r1c4_cut0"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "1.5756000000000001", "1.5956000000000001"
+.Yrange "-2.1324", "-1.9674"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r1c4","antenna:patch_r1c4_cut0"
+With Brick
+.Reset
+.Name "patch_r1c4_cut1"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "1.7644000000000002", "1.7844000000000002"
+.Yrange "-2.1324", "-1.9674"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r1c4","antenna:patch_r1c4_cut1"
+
+'@ Signal level2_1_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level2_1_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-2.2915500000000004", "-2.18845"
+.Yrange "-2.115", "-1.8350000000000002"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level2_1_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level2_1_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-2.3244000000000002", "-2.1556"
+.Yrange "-1.8350000000000002", "-1.4056000000000002"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal row_rail_1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "row_rail_1"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-2.24", "0.0844"
+.Yrange "-1.5744000000000002", "-1.4056000000000002"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal row_entry_1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "row_entry_1"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-0.0844", "0.0844"
+.Yrange "-1.4900000000000002", "-1.1806"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level3_1_0_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level3_1_0_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-0.28", "0"
+.Yrange "-1.31655", "-1.2134500000000001"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level3_1_0_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level3_1_0_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.2044000000000001", "-0.28"
+.Yrange "-1.3494000000000002", "-1.1806"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal row_rise_1_0
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "row_rise_1_0"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.2044000000000001", "-1.0356"
+.Yrange "-1.2650000000000001", "-0.9456"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r2c1_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r2c1_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.4000000000000001", "-1.12"
+.Yrange "-1.08155", "-0.97845"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r2c1_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r2c1_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.7644000000000002", "-1.4000000000000001"
+.Yrange "-1.1144", "-0.9456"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal inset_r2c1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "inset_r2c1"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.7644000000000002", "-1.5956000000000001"
+.Yrange "-1.03", "-0.7174"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal patch_r2c1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "patch_r2c1"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-2.0135", "-1.3465000000000003"
+.Yrange "-0.8824000000000001", "-0.36760000000000004"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+With Brick
+.Reset
+.Name "patch_r2c1_cut0"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "-1.7844000000000002", "-1.7644000000000002"
+.Yrange "-0.8824000000000001", "-0.7174"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r2c1","antenna:patch_r2c1_cut0"
+With Brick
+.Reset
+.Name "patch_r2c1_cut1"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "-1.5956000000000001", "-1.5756000000000001"
+.Yrange "-0.8824000000000001", "-0.7174"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r2c1","antenna:patch_r2c1_cut1"
+
+'@ Signal level4_r2c2_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r2c2_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.12", "-0.8400000000000001"
+.Yrange "-1.08155", "-0.97845"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r2c2_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r2c2_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-0.8400000000000001", "-0.4756"
+.Yrange "-1.1144", "-0.9456"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal inset_r2c2
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "inset_r2c2"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-0.6444000000000001", "-0.4756"
+.Yrange "-1.03", "-0.7174"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal patch_r2c2
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "patch_r2c2"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-0.8935000000000001", "-0.22650000000000003"
+.Yrange "-0.8824000000000001", "-0.36760000000000004"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+With Brick
+.Reset
+.Name "patch_r2c2_cut0"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "-0.6644000000000001", "-0.6444000000000001"
+.Yrange "-0.8824000000000001", "-0.7174"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r2c2","antenna:patch_r2c2_cut0"
+With Brick
+.Reset
+.Name "patch_r2c2_cut1"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "-0.4756", "-0.4556"
+.Yrange "-0.8824000000000001", "-0.7174"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r2c2","antenna:patch_r2c2_cut1"
+
+'@ Signal level3_1_1_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level3_1_1_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0", "0.28"
+.Yrange "-1.31655", "-1.2134500000000001"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level3_1_1_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level3_1_1_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0.28", "1.2044000000000001"
+.Yrange "-1.3494000000000002", "-1.1806"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal row_rise_1_1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "row_rise_1_1"
+.Component "antenna"
+.Material "Gold"
+.Xrange "1.0356", "1.2044000000000001"
+.Yrange "-1.2650000000000001", "-0.9456"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r2c3_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r2c3_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0.8400000000000001", "1.12"
+.Yrange "-1.08155", "-0.97845"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r2c3_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r2c3_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0.4756", "0.8400000000000001"
+.Yrange "-1.1144", "-0.9456"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal inset_r2c3
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "inset_r2c3"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0.4756", "0.6444000000000001"
+.Yrange "-1.03", "-0.7174"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal patch_r2c3
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "patch_r2c3"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0.22650000000000003", "0.8935000000000001"
+.Yrange "-0.8824000000000001", "-0.36760000000000004"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+With Brick
+.Reset
+.Name "patch_r2c3_cut0"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "0.4556", "0.4756"
+.Yrange "-0.8824000000000001", "-0.7174"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r2c3","antenna:patch_r2c3_cut0"
+With Brick
+.Reset
+.Name "patch_r2c3_cut1"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "0.6444000000000001", "0.6644000000000001"
+.Yrange "-0.8824000000000001", "-0.7174"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r2c3","antenna:patch_r2c3_cut1"
+
+'@ Signal level4_r2c4_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r2c4_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "1.12", "1.4000000000000001"
+.Yrange "-1.08155", "-0.97845"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r2c4_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r2c4_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "1.4000000000000001", "1.7644000000000002"
+.Yrange "-1.1144", "-0.9456"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal inset_r2c4
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "inset_r2c4"
+.Component "antenna"
+.Material "Gold"
+.Xrange "1.5956000000000001", "1.7644000000000002"
+.Yrange "-1.03", "-0.7174"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal patch_r2c4
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "patch_r2c4"
+.Component "antenna"
+.Material "Gold"
+.Xrange "1.3465000000000003", "2.0135"
+.Yrange "-0.8824000000000001", "-0.36760000000000004"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+With Brick
+.Reset
+.Name "patch_r2c4_cut0"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "1.5756000000000001", "1.5956000000000001"
+.Yrange "-0.8824000000000001", "-0.7174"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r2c4","antenna:patch_r2c4_cut0"
+With Brick
+.Reset
+.Name "patch_r2c4_cut1"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "1.7644000000000002", "1.7844000000000002"
+.Yrange "-0.8824000000000001", "-0.7174"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r2c4","antenna:patch_r2c4_cut1"
+
+'@ Signal level1_1_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level1_1_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-2.95155", "-2.8484499999999997"
+.Yrange "-0.865", "-0.585"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level1_1_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level1_1_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-2.9844", "-2.8156"
+.Yrange "-0.585", "0.46940000000000004"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal group_run_1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "group_run_1"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-2.9", "-2.1556"
+.Yrange "0.3006", "0.46940000000000004"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level2_2_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level2_2_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-2.2915500000000004", "-2.18845"
+.Yrange "0.10499999999999998", "0.385"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level2_2_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level2_2_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-2.3244000000000002", "-2.1556"
+.Yrange "-0.3244", "0.10499999999999998"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal row_rail_2
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "row_rail_2"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-2.24", "0.0844"
+.Yrange "-0.3244", "-0.1556"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal row_entry_2
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "row_entry_2"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-0.0844", "0.0844"
+.Yrange "-0.24", "0.06939999999999999"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level3_2_0_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level3_2_0_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-0.28", "0"
+.Yrange "-0.06655000000000001", "0.036549999999999985"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level3_2_0_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level3_2_0_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.2044000000000001", "-0.28"
+.Yrange "-0.09940000000000002", "0.06939999999999999"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal row_rise_2_0
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "row_rise_2_0"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.2044000000000001", "-1.0356"
+.Yrange "-0.015000000000000013", "0.3044"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r3c1_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r3c1_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.4000000000000001", "-1.12"
+.Yrange "0.16845", "0.27154999999999996"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r3c1_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r3c1_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.7644000000000002", "-1.4000000000000001"
+.Yrange "0.13559999999999997", "0.3044"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal inset_r3c1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "inset_r3c1"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.7644000000000002", "-1.5956000000000001"
+.Yrange "0.21999999999999997", "0.5326"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal patch_r3c1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "patch_r3c1"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-2.0135", "-1.3465000000000003"
+.Yrange "0.3676", "0.8824000000000001"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+With Brick
+.Reset
+.Name "patch_r3c1_cut0"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "-1.7844000000000002", "-1.7644000000000002"
+.Yrange "0.3676", "0.5326"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r3c1","antenna:patch_r3c1_cut0"
+With Brick
+.Reset
+.Name "patch_r3c1_cut1"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "-1.5956000000000001", "-1.5756000000000001"
+.Yrange "0.3676", "0.5326"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r3c1","antenna:patch_r3c1_cut1"
+
+'@ Signal level4_r3c2_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r3c2_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.12", "-0.8400000000000001"
+.Yrange "0.16845", "0.27154999999999996"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r3c2_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r3c2_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-0.8400000000000001", "-0.4756"
+.Yrange "0.13559999999999997", "0.3044"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal inset_r3c2
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "inset_r3c2"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-0.6444000000000001", "-0.4756"
+.Yrange "0.21999999999999997", "0.5326"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal patch_r3c2
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "patch_r3c2"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-0.8935000000000001", "-0.22650000000000003"
+.Yrange "0.3676", "0.8824000000000001"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+With Brick
+.Reset
+.Name "patch_r3c2_cut0"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "-0.6644000000000001", "-0.6444000000000001"
+.Yrange "0.3676", "0.5326"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r3c2","antenna:patch_r3c2_cut0"
+With Brick
+.Reset
+.Name "patch_r3c2_cut1"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "-0.4756", "-0.4556"
+.Yrange "0.3676", "0.5326"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r3c2","antenna:patch_r3c2_cut1"
+
+'@ Signal level3_2_1_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level3_2_1_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0", "0.28"
+.Yrange "-0.06655000000000001", "0.036549999999999985"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level3_2_1_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level3_2_1_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0.28", "1.2044000000000001"
+.Yrange "-0.09940000000000002", "0.06939999999999999"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal row_rise_2_1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "row_rise_2_1"
+.Component "antenna"
+.Material "Gold"
+.Xrange "1.0356", "1.2044000000000001"
+.Yrange "-0.015000000000000013", "0.3044"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r3c3_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r3c3_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0.8400000000000001", "1.12"
+.Yrange "0.16845", "0.27154999999999996"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r3c3_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r3c3_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0.4756", "0.8400000000000001"
+.Yrange "0.13559999999999997", "0.3044"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal inset_r3c3
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "inset_r3c3"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0.4756", "0.6444000000000001"
+.Yrange "0.21999999999999997", "0.5326"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal patch_r3c3
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "patch_r3c3"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0.22650000000000003", "0.8935000000000001"
+.Yrange "0.3676", "0.8824000000000001"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+With Brick
+.Reset
+.Name "patch_r3c3_cut0"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "0.4556", "0.4756"
+.Yrange "0.3676", "0.5326"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r3c3","antenna:patch_r3c3_cut0"
+With Brick
+.Reset
+.Name "patch_r3c3_cut1"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "0.6444000000000001", "0.6644000000000001"
+.Yrange "0.3676", "0.5326"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r3c3","antenna:patch_r3c3_cut1"
+
+'@ Signal level4_r3c4_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r3c4_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "1.12", "1.4000000000000001"
+.Yrange "0.16845", "0.27154999999999996"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r3c4_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r3c4_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "1.4000000000000001", "1.7644000000000002"
+.Yrange "0.13559999999999997", "0.3044"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal inset_r3c4
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "inset_r3c4"
+.Component "antenna"
+.Material "Gold"
+.Xrange "1.5956000000000001", "1.7644000000000002"
+.Yrange "0.21999999999999997", "0.5326"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal patch_r3c4
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "patch_r3c4"
+.Component "antenna"
+.Material "Gold"
+.Xrange "1.3465000000000003", "2.0135"
+.Yrange "0.3676", "0.8824000000000001"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+With Brick
+.Reset
+.Name "patch_r3c4_cut0"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "1.5756000000000001", "1.5956000000000001"
+.Yrange "0.3676", "0.5326"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r3c4","antenna:patch_r3c4_cut0"
+With Brick
+.Reset
+.Name "patch_r3c4_cut1"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "1.7644000000000002", "1.7844000000000002"
+.Yrange "0.3676", "0.5326"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r3c4","antenna:patch_r3c4_cut1"
+
+'@ Signal level2_3_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level2_3_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-2.2915500000000004", "-2.18845"
+.Yrange "0.385", "0.665"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level2_3_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level2_3_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-2.3244000000000002", "-2.1556"
+.Yrange "0.665", "1.0944"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal row_rail_3
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "row_rail_3"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-2.24", "0.0844"
+.Yrange "0.9256", "1.0944"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal row_entry_3
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "row_entry_3"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-0.0844", "0.0844"
+.Yrange "1.01", "1.3194"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level3_3_0_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level3_3_0_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-0.28", "0"
+.Yrange "1.18345", "1.2865499999999999"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level3_3_0_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level3_3_0_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.2044000000000001", "-0.28"
+.Yrange "1.1505999999999998", "1.3194"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal row_rise_3_0
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "row_rise_3_0"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.2044000000000001", "-1.0356"
+.Yrange "1.2349999999999999", "1.5544"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r4c1_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r4c1_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.4000000000000001", "-1.12"
+.Yrange "1.41845", "1.52155"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r4c1_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r4c1_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.7644000000000002", "-1.4000000000000001"
+.Yrange "1.3856", "1.5544"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal inset_r4c1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "inset_r4c1"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.7644000000000002", "-1.5956000000000001"
+.Yrange "1.47", "1.7826"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal patch_r4c1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "patch_r4c1"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-2.0135", "-1.3465000000000003"
+.Yrange "1.6176", "2.1324"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+With Brick
+.Reset
+.Name "patch_r4c1_cut0"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "-1.7844000000000002", "-1.7644000000000002"
+.Yrange "1.6176", "1.7826"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r4c1","antenna:patch_r4c1_cut0"
+With Brick
+.Reset
+.Name "patch_r4c1_cut1"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "-1.5956000000000001", "-1.5756000000000001"
+.Yrange "1.6176", "1.7826"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r4c1","antenna:patch_r4c1_cut1"
+
+'@ Signal level4_r4c2_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r4c2_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-1.12", "-0.8400000000000001"
+.Yrange "1.41845", "1.52155"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r4c2_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r4c2_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-0.8400000000000001", "-0.4756"
+.Yrange "1.3856", "1.5544"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal inset_r4c2
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "inset_r4c2"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-0.6444000000000001", "-0.4756"
+.Yrange "1.47", "1.7826"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal patch_r4c2
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "patch_r4c2"
+.Component "antenna"
+.Material "Gold"
+.Xrange "-0.8935000000000001", "-0.22650000000000003"
+.Yrange "1.6176", "2.1324"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+With Brick
+.Reset
+.Name "patch_r4c2_cut0"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "-0.6644000000000001", "-0.6444000000000001"
+.Yrange "1.6176", "1.7826"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r4c2","antenna:patch_r4c2_cut0"
+With Brick
+.Reset
+.Name "patch_r4c2_cut1"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "-0.4756", "-0.4556"
+.Yrange "1.6176", "1.7826"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r4c2","antenna:patch_r4c2_cut1"
+
+'@ Signal level3_3_1_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level3_3_1_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0", "0.28"
+.Yrange "1.18345", "1.2865499999999999"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level3_3_1_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level3_3_1_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0.28", "1.2044000000000001"
+.Yrange "1.1505999999999998", "1.3194"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal row_rise_3_1
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "row_rise_3_1"
+.Component "antenna"
+.Material "Gold"
+.Xrange "1.0356", "1.2044000000000001"
+.Yrange "1.2349999999999999", "1.5544"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r4c3_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r4c3_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0.8400000000000001", "1.12"
+.Yrange "1.41845", "1.52155"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r4c3_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r4c3_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0.4756", "0.8400000000000001"
+.Yrange "1.3856", "1.5544"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal inset_r4c3
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "inset_r4c3"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0.4756", "0.6444000000000001"
+.Yrange "1.47", "1.7826"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal patch_r4c3
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "patch_r4c3"
+.Component "antenna"
+.Material "Gold"
+.Xrange "0.22650000000000003", "0.8935000000000001"
+.Yrange "1.6176", "2.1324"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+With Brick
+.Reset
+.Name "patch_r4c3_cut0"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "0.4556", "0.4756"
+.Yrange "1.6176", "1.7826"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r4c3","antenna:patch_r4c3_cut0"
+With Brick
+.Reset
+.Name "patch_r4c3_cut1"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "0.6444000000000001", "0.6644000000000001"
+.Yrange "1.6176", "1.7826"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r4c3","antenna:patch_r4c3_cut1"
+
+'@ Signal level4_r4c4_transformer
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r4c4_transformer"
+.Component "antenna"
+.Material "Gold"
+.Xrange "1.12", "1.4000000000000001"
+.Yrange "1.41845", "1.52155"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal level4_r4c4_arm
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "level4_r4c4_arm"
+.Component "antenna"
+.Material "Gold"
+.Xrange "1.4000000000000001", "1.7644000000000002"
+.Yrange "1.3856", "1.5544"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal inset_r4c4
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "inset_r4c4"
+.Component "antenna"
+.Material "Gold"
+.Xrange "1.5956000000000001", "1.7644000000000002"
+.Yrange "1.47", "1.7826"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+
+'@ Signal patch_r4c4
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Brick
+.Reset
+.Name "patch_r4c4"
+.Component "antenna"
+.Material "Gold"
+.Xrange "1.3465000000000003", "2.0135"
+.Yrange "1.6176", "2.1324"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+With Brick
+.Reset
+.Name "patch_r4c4_cut0"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "1.5756000000000001", "1.5956000000000001"
+.Yrange "1.6176", "1.7826"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r4c4","antenna:patch_r4c4_cut0"
+With Brick
+.Reset
+.Name "patch_r4c4_cut1"
+.Component "antenna"
+.Material "Vacuum"
+.Xrange "1.7644000000000002", "1.7844000000000002"
+.Yrange "1.6176", "1.7826"
+.Zrange "substrate_h", "substrate_h+metal_thickness"
+.Create
+End With
+Solid.Subtract "antenna:patch_r4c4","antenna:patch_r4c4_cut1"
+
+'@ Union all 16 inset-fed patches and 15 splitter junctions
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+Solid.Add "antenna:trunk","antenna:input_transformer"
+Solid.Add "antenna:trunk","antenna:input_to_divider"
+Solid.Add "antenna:trunk","antenna:level1_0_transformer"
+Solid.Add "antenna:trunk","antenna:level1_1_transformer"
+Solid.Add "antenna:trunk","antenna:level1_0_arm"
+Solid.Add "antenna:trunk","antenna:level1_1_arm"
+Solid.Add "antenna:trunk","antenna:group_run_0"
+Solid.Add "antenna:trunk","antenna:group_run_1"
+Solid.Add "antenna:trunk","antenna:level2_0_transformer"
+Solid.Add "antenna:trunk","antenna:level2_1_transformer"
+Solid.Add "antenna:trunk","antenna:level2_2_transformer"
+Solid.Add "antenna:trunk","antenna:level2_3_transformer"
+Solid.Add "antenna:trunk","antenna:level2_0_arm"
+Solid.Add "antenna:trunk","antenna:level2_1_arm"
+Solid.Add "antenna:trunk","antenna:level2_2_arm"
+Solid.Add "antenna:trunk","antenna:level2_3_arm"
+Solid.Add "antenna:trunk","antenna:row_rail_0"
+Solid.Add "antenna:trunk","antenna:row_rail_1"
+Solid.Add "antenna:trunk","antenna:row_rail_2"
+Solid.Add "antenna:trunk","antenna:row_rail_3"
+Solid.Add "antenna:trunk","antenna:row_entry_0"
+Solid.Add "antenna:trunk","antenna:row_entry_1"
+Solid.Add "antenna:trunk","antenna:row_entry_2"
+Solid.Add "antenna:trunk","antenna:row_entry_3"
+Solid.Add "antenna:trunk","antenna:level3_0_0_transformer"
+Solid.Add "antenna:trunk","antenna:level3_0_1_transformer"
+Solid.Add "antenna:trunk","antenna:level3_1_0_transformer"
+Solid.Add "antenna:trunk","antenna:level3_1_1_transformer"
+Solid.Add "antenna:trunk","antenna:level3_2_0_transformer"
+Solid.Add "antenna:trunk","antenna:level3_2_1_transformer"
+Solid.Add "antenna:trunk","antenna:level3_3_0_transformer"
+Solid.Add "antenna:trunk","antenna:level3_3_1_transformer"
+Solid.Add "antenna:trunk","antenna:level3_0_0_arm"
+Solid.Add "antenna:trunk","antenna:level3_0_1_arm"
+Solid.Add "antenna:trunk","antenna:level3_1_0_arm"
+Solid.Add "antenna:trunk","antenna:level3_1_1_arm"
+Solid.Add "antenna:trunk","antenna:level3_2_0_arm"
+Solid.Add "antenna:trunk","antenna:level3_2_1_arm"
+Solid.Add "antenna:trunk","antenna:level3_3_0_arm"
+Solid.Add "antenna:trunk","antenna:level3_3_1_arm"
+Solid.Add "antenna:trunk","antenna:row_rise_0_0"
+Solid.Add "antenna:trunk","antenna:row_rise_0_1"
+Solid.Add "antenna:trunk","antenna:row_rise_1_0"
+Solid.Add "antenna:trunk","antenna:row_rise_1_1"
+Solid.Add "antenna:trunk","antenna:row_rise_2_0"
+Solid.Add "antenna:trunk","antenna:row_rise_2_1"
+Solid.Add "antenna:trunk","antenna:row_rise_3_0"
+Solid.Add "antenna:trunk","antenna:row_rise_3_1"
+Solid.Add "antenna:trunk","antenna:level4_r1c1_transformer"
+Solid.Add "antenna:trunk","antenna:level4_r1c2_transformer"
+Solid.Add "antenna:trunk","antenna:level4_r1c3_transformer"
+Solid.Add "antenna:trunk","antenna:level4_r1c4_transformer"
+Solid.Add "antenna:trunk","antenna:level4_r2c1_transformer"
+Solid.Add "antenna:trunk","antenna:level4_r2c2_transformer"
+Solid.Add "antenna:trunk","antenna:level4_r2c3_transformer"
+Solid.Add "antenna:trunk","antenna:level4_r2c4_transformer"
+Solid.Add "antenna:trunk","antenna:level4_r3c1_transformer"
+Solid.Add "antenna:trunk","antenna:level4_r3c2_transformer"
+Solid.Add "antenna:trunk","antenna:level4_r3c3_transformer"
+Solid.Add "antenna:trunk","antenna:level4_r3c4_transformer"
+Solid.Add "antenna:trunk","antenna:level4_r4c1_transformer"
+Solid.Add "antenna:trunk","antenna:level4_r4c2_transformer"
+Solid.Add "antenna:trunk","antenna:level4_r4c3_transformer"
+Solid.Add "antenna:trunk","antenna:level4_r4c4_transformer"
+Solid.Add "antenna:trunk","antenna:level4_r1c1_arm"
+Solid.Add "antenna:trunk","antenna:level4_r1c2_arm"
+Solid.Add "antenna:trunk","antenna:level4_r1c3_arm"
+Solid.Add "antenna:trunk","antenna:level4_r1c4_arm"
+Solid.Add "antenna:trunk","antenna:level4_r2c1_arm"
+Solid.Add "antenna:trunk","antenna:level4_r2c2_arm"
+Solid.Add "antenna:trunk","antenna:level4_r2c3_arm"
+Solid.Add "antenna:trunk","antenna:level4_r2c4_arm"
+Solid.Add "antenna:trunk","antenna:level4_r3c1_arm"
+Solid.Add "antenna:trunk","antenna:level4_r3c2_arm"
+Solid.Add "antenna:trunk","antenna:level4_r3c3_arm"
+Solid.Add "antenna:trunk","antenna:level4_r3c4_arm"
+Solid.Add "antenna:trunk","antenna:level4_r4c1_arm"
+Solid.Add "antenna:trunk","antenna:level4_r4c2_arm"
+Solid.Add "antenna:trunk","antenna:level4_r4c3_arm"
+Solid.Add "antenna:trunk","antenna:level4_r4c4_arm"
+Solid.Add "antenna:trunk","antenna:inset_r1c1"
+Solid.Add "antenna:trunk","antenna:inset_r1c2"
+Solid.Add "antenna:trunk","antenna:inset_r1c3"
+Solid.Add "antenna:trunk","antenna:inset_r1c4"
+Solid.Add "antenna:trunk","antenna:inset_r2c1"
+Solid.Add "antenna:trunk","antenna:inset_r2c2"
+Solid.Add "antenna:trunk","antenna:inset_r2c3"
+Solid.Add "antenna:trunk","antenna:inset_r2c4"
+Solid.Add "antenna:trunk","antenna:inset_r3c1"
+Solid.Add "antenna:trunk","antenna:inset_r3c2"
+Solid.Add "antenna:trunk","antenna:inset_r3c3"
+Solid.Add "antenna:trunk","antenna:inset_r3c4"
+Solid.Add "antenna:trunk","antenna:inset_r4c1"
+Solid.Add "antenna:trunk","antenna:inset_r4c2"
+Solid.Add "antenna:trunk","antenna:inset_r4c3"
+Solid.Add "antenna:trunk","antenna:inset_r4c4"
+Solid.Add "antenna:trunk","antenna:patch_r1c1"
+Solid.Add "antenna:trunk","antenna:patch_r1c2"
+Solid.Add "antenna:trunk","antenna:patch_r1c3"
+Solid.Add "antenna:trunk","antenna:patch_r1c4"
+Solid.Add "antenna:trunk","antenna:patch_r2c1"
+Solid.Add "antenna:trunk","antenna:patch_r2c2"
+Solid.Add "antenna:trunk","antenna:patch_r2c3"
+Solid.Add "antenna:trunk","antenna:patch_r2c4"
+Solid.Add "antenna:trunk","antenna:patch_r3c1"
+Solid.Add "antenna:trunk","antenna:patch_r3c2"
+Solid.Add "antenna:trunk","antenna:patch_r3c3"
+Solid.Add "antenna:trunk","antenna:patch_r3c4"
+Solid.Add "antenna:trunk","antenna:patch_r4c1"
+Solid.Add "antenna:trunk","antenna:patch_r4c2"
+Solid.Add "antenna:trunk","antenna:patch_r4c3"
+Solid.Add "antenna:trunk","antenna:patch_r4c4"
+
+'@ One xmin port, open boundaries and inherited TD settings
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Boundary
+.Xmin "open"
+.ReflectionLevel "0.0001"
+.MinimumDistanceType "Fraction"
+.MinimumDistancePerWavelengthNewMeshEngine "4"
+.MinimumDistanceReferenceFrequencyType "User"
+.FrequencyForMinimumDistance "130"
+End With
+With Port
+.Reset
+.PortNumber "1"
+.Label "50ohm_microstrip"
+.NumberOfModes "1"
+.Coordinates "Free"
+.Orientation "xmin"
+.PortOnBound "True"
+.Xrange "port_x", "port_x"
+.Yrange "port_y-port_halfwidth", "port_y+port_halfwidth"
+.Zrange "-metal_thickness", "6*substrate_h"
+.ReferencePlaneDistance "0"
+.Create
+End With
+With Solver
+.Method "Hexahedral"
+.CalculationType "TD-S"
+.StimulationPort "1"
+.StimulationMode "1"
+.SteadyStateLimit "-60"
+.MonitorFarFieldsNearToModel "False"
+.MeshAdaption "False"
+.AutoNormImpedance "False"
+.NormingImpedance "50"
+.CalculateModesOnly "False"
+.RunDiscretizerOnly "False"
+End With
+With MeshSettings
+.SetMeshType "Hex"
+.Set "StepsPerWaveNear", "mesh_near"
+.Set "StepsPerWaveFar", "15"
+.Set "StepsPerBoxNear", "mesh_box"
+.Set "StepsPerBoxFar", "1"
+.Set "WavelengthRefinementSameAsNear", "0"
+.Set "UseRatioLimitGeometry", "1"
+.Set "RatioLimitGeometry", "25"
+.Set "EdgeRefinementOn", "1"
+.Set "EdgeRefinementPolicy", "1"
+.Set "EdgeRefinementRatio", "2"
+.Set "EdgeRefinementBufferLines", "3"
+.Set "UseDielectrics", "1"
+End With
+Mesh.ConnectivityCheck "True"
+
+'@ Matched-band farfield 145 GHz
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Monitor
+.Reset
+.Name "farfield (f=145)"
+.Domain "Frequency"
+.FieldType "Farfield"
+.MonitorValue "145"
+.Create
+End With
+
+'@ Matched-band farfield 154 GHz
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+With Monitor
+.Reset
+.Name "farfield (f=154)"
+.Domain "Frequency"
+.FieldType "Farfield"
+.MonitorValue "154"
+.Create
+End With
+
+'@ set PBA version
+
+'[VERSION]2024.0|33.0.1|20230901[/VERSION]
+Discretizer.PBAVersion "2023090124"
+

@@ -1,0 +1,14 @@
+[
+  {
+    "text": "This software is licensed for non-commercial use only.",
+    "type": "WARNING"
+  },
+  {
+    "text": "This software is licensed for up to 1000000 mesh cells only. The current mesh size exceeds this limit. Please reduce the mesh size accordingly.",
+    "type": "ERROR"
+  },
+  {
+    "text": "1 error and 1 warning occurred.",
+    "type": "ERROR"
+  }
+]

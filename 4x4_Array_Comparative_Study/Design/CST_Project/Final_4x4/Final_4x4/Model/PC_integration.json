@@ -1,0 +1,154 @@
+{
+   "execution": {
+      "classname": "SMAPowerByEmagHPCFrame",
+      "libname": "SMAPowerByEmagUI"
+   },
+   "inputVariables": [
+      {
+         "name": "patch_width",
+         "type": "float",
+         "value": 0.667
+      },
+      {
+         "name": "patch_length",
+         "type": "float",
+         "value": 0.5148
+      },
+      {
+         "name": "substrate_h",
+         "type": "float",
+         "value": 0.075
+      },
+      {
+         "name": "metal_thickness",
+         "type": "float",
+         "value": 0.002
+      },
+      {
+         "name": "eps_r",
+         "type": "float",
+         "value": 3.5
+      },
+      {
+         "name": "loss_tangent",
+         "type": "float",
+         "value": 0.0027
+      },
+      {
+         "name": "feed_width",
+         "type": "float",
+         "value": 0.1688
+      },
+      {
+         "name": "transformer_width",
+         "type": "float",
+         "value": 0.1031
+      },
+      {
+         "name": "transformer_length",
+         "type": "float",
+         "value": 0.28
+      },
+      {
+         "name": "inset_length",
+         "type": "float",
+         "value": 0.165
+      },
+      {
+         "name": "inset_gap",
+         "type": "float",
+         "value": 0.02
+      },
+      {
+         "name": "port_halfwidth",
+         "type": "float",
+         "value": 0.25
+      },
+      {
+         "name": "launch_length",
+         "type": "float",
+         "value": 0.5
+      },
+      {
+         "name": "pitch_x",
+         "type": "float",
+         "value": 1.12
+      },
+      {
+         "name": "pitch_y",
+         "type": "float",
+         "value": 1.25
+      },
+      {
+         "name": "stage3_separation",
+         "type": "float",
+         "value": 0.235
+      },
+      {
+         "name": "inlet_rail_separation",
+         "type": "float",
+         "value": 0.225
+      },
+      {
+         "name": "stage4_offset",
+         "type": "float",
+         "value": 0.405
+      },
+      {
+         "name": "row_split_x",
+         "type": "float",
+         "value": -2.24
+      },
+      {
+         "name": "first_split_x",
+         "type": "float",
+         "value": -2.9
+      },
+      {
+         "name": "board_x_min",
+         "type": "float",
+         "value": -3.12
+      },
+      {
+         "name": "board_x_max",
+         "type": "float",
+         "value": 2.4
+      },
+      {
+         "name": "mesh_near",
+         "type": "float",
+         "value": 23.0
+      },
+      {
+         "name": "mesh_box",
+         "type": "float",
+         "value": 33.0
+      },
+      {
+         "name": "match_start",
+         "type": "float",
+         "value": 0.17
+      },
+      {
+         "name": "match_length",
+         "type": "float",
+         "value": 0.14
+      },
+      {
+         "name": "match_width",
+         "type": "float",
+         "value": 0.045
+      },
+      {
+         "name": "port_x",
+         "type": "float",
+         "value": -3.62
+      },
+      {
+         "name": "port_y",
+         "type": "float",
+         "value": -0.865
+      }
+   ],
+   "outputVariables": []
+}

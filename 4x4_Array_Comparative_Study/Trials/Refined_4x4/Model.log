@@ -1,0 +1,11 @@
+2026-11-20 15:12:45   *** Warning ***
+
+                      This software is licensed for non-commercial use only.
+
+                      ------------------------------------------------------------------------------
+2026-11-20 15:12:45   *** Error ***
+
+                      This software is licensed for up to 1000000 mesh cells only. The current mesh
+                      size exceeds this limit. Please reduce the mesh size accordingly.
+
+                      ------------------------------------------------------------------------------

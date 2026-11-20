@@ -1,0 +1,84 @@
+[
+  {
+    "source": "Project_Final\\08_Efficiency_Optimisation\\06_Final_Candidate\\TELE9782_DBand_Efficiency_Final\\TELE9782_DBand_Efficiency_Final.cst",
+    "reopened_read_only": true,
+    "series": {
+      "1D Results\\S-Parameters\\S1,1": {
+        "points": 1001,
+        "maximum_x_delta": 0.0,
+        "maximum_complex_y_delta": 0.0
+      },
+      "1D Results\\Reference Impedance\\ZRef 1(1)": {
+        "points": 1001,
+        "maximum_x_delta": 0.0,
+        "maximum_complex_y_delta": 0.0
+      },
+      "1D Results\\Power\\Excitation [1]\\Power Accepted": {
+        "points": 1001,
+        "maximum_x_delta": 0.0,
+        "maximum_complex_y_delta": 0.0
+      },
+      "1D Results\\Power\\Excitation [1]\\Power Radiated": {
+        "points": 13,
+        "maximum_x_delta": 0.0,
+        "maximum_complex_y_delta": 0.0
+      },
+      "1D Results\\Power\\Excitation [1]\\Loss in Metals": {
+        "points": 5,
+        "maximum_x_delta": 0.0,
+        "maximum_complex_y_delta": 0.0
+      },
+      "1D Results\\Power\\Excitation [1]\\Loss in Dielectrics": {
+        "points": 5,
+        "maximum_x_delta": 0.0,
+        "maximum_complex_y_delta": 0.0
+      },
+      "1D Results\\Power\\Excitation [1]\\Power Absorbed at all Ports": {
+        "points": 1001,
+        "maximum_x_delta": 0.0,
+        "maximum_complex_y_delta": 0.0
+      }
+    }
+  },
+  {
+    "source": "01_CST_Project\\Final_4x4\\Final_4x4.cst",
+    "reopened_read_only": true,
+    "series": {
+      "1D Results\\S-Parameters\\S1,1": {
+        "points": 1001,
+        "maximum_x_delta": 0.0,
+        "maximum_complex_y_delta": 0.0
+      },
+      "1D Results\\Reference Impedance\\ZRef 1(1)": {
+        "points": 1001,
+        "maximum_x_delta": 0.0,
+        "maximum_complex_y_delta": 0.0
+      },
+      "1D Results\\Power\\Excitation [1]\\Power Accepted": {
+        "points": 1001,
+        "maximum_x_delta": 0.0,
+        "maximum_complex_y_delta": 0.0
+      },
+      "1D Results\\Power\\Excitation [1]\\Power Radiated": {
+        "points": 7,
+        "maximum_x_delta": 0.0,
+        "maximum_complex_y_delta": 0.0
+      },
+      "1D Results\\Power\\Excitation [1]\\Loss in Metals": {
+        "points": 5,
+        "maximum_x_delta": 0.0,
+        "maximum_complex_y_delta": 0.0
+      },
+      "1D Results\\Power\\Excitation [1]\\Loss in Dielectrics": {
+        "points": 5,
+        "maximum_x_delta": 0.0,
+        "maximum_complex_y_delta": 0.0
+      },
+      "1D Results\\Power\\Excitation [1]\\Power Absorbed at all Ports": {
+        "points": 1001,
+        "maximum_x_delta": 0.0,
+        "maximum_complex_y_delta": 0.0
+      }
+    }
+  }
+]

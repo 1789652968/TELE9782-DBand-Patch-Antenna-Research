@@ -1,0 +1,9 @@
+{
+  "source": "Measured Initial_4x4 input impedance, lossless uniform-line surrogate for the local stepped section",
+  "mean_reflection_score": 0.5884368099905075,
+  "trial": {
+    "match_start": 0.17,
+    "match_length": 0.14,
+    "match_width": 0.045
+  }
+}

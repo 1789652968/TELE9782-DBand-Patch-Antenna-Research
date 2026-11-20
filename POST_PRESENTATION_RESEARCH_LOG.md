@@ -30,9 +30,13 @@ Fine、IndependentMesh、重开交付复算分别 83.438%、83.519%、82.994%。
 
 ShiftBracket85 加厚基板至 85 μm、调整贴片和馈线并平移 +Y 0.159 mm，得到 85.49% / 12°，增益与带宽低于上一轮。H085 使用 85 μm、0.5102 mm 贴片长度与 0.1913 mm feed，84.96% / 19–20°，峰值增益和带宽最好于三项所选角色。ShiftNull75 保持 75 μm、沿 +Y 平移 0.1876 mm，83.38% / 4°，S11 −20.70 dB；154 GHz 的偏角达 32°。WideGround 也经过三次高分辨率验证，选择记录保留它的完整链。[候选比较](DESIGN_COMPARISON.md)
 
-## Stage 5 · 课程主交付
+## Stage 5 · 4×4 阵列横向对照
 
-保留第一轮 82.99% 工程。85.49% 相对提升 2.50 个百分点，但峰值实现增益下降约 0.557 dB、+Z 下降约 0.218 dB、带宽少约 4.798 GHz；12° 虽改善，仍离法线有距离。H085 的 +Z 持平而偏转增加。ShiftNull75 在工作点校正偏角的同时降低 +Z 和带宽，并有频率限制。判断综合了指标、工作点与频带的差异，所有角色和弃选数据均供正式报告比较。[推荐记录](Project_Final/09_Multiobjective_Optimisation/07_Final_Candidates/Recommended_Project.json)
+完成主要 1×2 优化后，团队加入 150 GHz 16 贴片对照，沿用 75 μm Polyimide 与 2 μm Gold 并使用侧进线四级 Corporate Feed。2026-11-20 的 CST 日志依次记录首版、阶梯线、开路支节、额外四分之一波长段。有限匹配实验后以阶梯线继续，两个最终成功网格为 764,940 和 781,200 cells，26/39 网格触发许可上限。16:25:07 完成所选细网格求解，重开后恢复导出。结果是 74.36% Radiation Efficiency、12.058 dBi Directivity、−4.114 dB S11，以及 45.52% Total Efficiency。孔径增大使方向性提高，失配和更高的接受功率损耗比例限制了实现增益的增加。[工作流](4x4_Array_Comparative_Study/05_Documentation/4x4_DESIGN_AND_SIMULATION_WORKFLOW.md) · [数值证据](4x4_Array_Comparative_Study/05_Documentation/4x4_SIMULATION_VALIDATION.md)
+
+## Stage 6 · 最终选型与正式报告
+
+保留第一轮 82.99% 工程。85.49% 相对提升 2.50 个百分点，但峰值实现增益下降约 0.557 dB、+Z 下降约 0.218 dB、带宽少约 4.798 GHz；12° 虽改善，仍离法线有距离。H085 的 +Z 持平而偏转增加。ShiftNull75 在工作点校正偏角的同时降低 +Z 和带宽，并有频率限制。4×4 的更高方向性和更窄波束进一步提供设计对照。其 −4.114 dB S11、较低效率和较大结构使其用于讨论孔径、匹配与损耗的取舍。最终报告应保留模型条件和验证范围。[推荐记录](Project_Final/09_Multiobjective_Optimisation/07_Final_Candidates/Recommended_Project.json)
 
 ## 原生日志锚点
 

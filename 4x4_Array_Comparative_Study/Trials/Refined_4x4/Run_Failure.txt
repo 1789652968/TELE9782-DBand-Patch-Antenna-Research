@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "04_Automation\Run_4x4.py", line 41, in main
+    s,_=b.run(p,export_frequencies={145,150,154})
+  File "04_Automation\CST_Utilities\Array_Build.py", line 181, in run
+    try:p.model3d.run_solver()
+RuntimeError: An error occurred while trying to execute run_solver:
+Terminated on unknown error
+
+Reported error messages:
+ERROR: This software is licensed for up to 1000000 mesh cells only. The current mesh size exceeds this limit. Please reduce the mesh size accordingly.
+ERROR: 1 error and 1 warning occurred.

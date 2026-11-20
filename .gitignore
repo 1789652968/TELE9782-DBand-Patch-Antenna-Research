@@ -11,3 +11,6 @@ __pycache__/
 credentials.json
 /Release_Assets/
 /Local_Artifacts/
+
+# Native 4x4 bundle belongs in a Release asset
+/4x4_Array_Comparative_Study/Final_4x4_Native_CST.zip

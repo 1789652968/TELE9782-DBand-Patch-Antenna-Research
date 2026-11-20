@@ -1,0 +1,8 @@
+{
+  "maximum_mesh_cells": 1000000,
+  "rejected_setup": "26 steps per wave, 39 per box, original Refined_4x4",
+  "original_native_error": "This software is licensed for up to 1000000 mesh cells only.",
+  "subsequent_rejected_jobs": [],
+  "final_steps_per_wave": 23,
+  "final_steps_per_box": 33
+}

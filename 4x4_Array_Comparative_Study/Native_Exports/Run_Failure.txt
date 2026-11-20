@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "04_Automation\Run_4x4.py", line 41, in main
+    s,_=b.run(p,export_frequencies={145,150,154})
+  File "04_Automation\CST_Utilities\Array_Build.py", line 187, in run
+    return extract(p,export_frequencies=export_frequencies)
+  File "04_Automation\CST_Utilities\Array_Build.py", line 158, in extract
+    summary={'name':label or Path(p.filename()).stem,'project':p.filename(),'solver':m.get_solver_run_info(),
+RuntimeError: Unable to determine project name. Is the Project still open?

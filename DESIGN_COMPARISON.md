@@ -20,3 +20,18 @@
 - **WideGround** 为第四套高分辨率对照。其三组验证完整，供分析地板加宽的限度。
 
 [最终指标 CSV](05_Final_Comparison/Tables/FINAL_VERIFIED_PERFORMANCE.csv) · [第二轮原始对比表](Project_Final/09_Multiobjective_Optimisation/08_Results_and_Figures/Multiobjective_Comparison.csv) · [第一轮原始报告](Project_Final/08_Efficiency_Optimisation/09_Documentation/Efficiency_Optimisation_Report.md) · [第二轮重开验证](Project_Final/09_Multiobjective_Optimisation/07_Final_Candidates/Verification_Results.json) · [1° 角度对照](Project_Final/09_Multiobjective_Optimisation/08_Results_and_Figures/Angular_Resolution_Check.csv) · [145/150/154 GHz](Project_Final/09_Multiobjective_Optimisation/08_Results_and_Figures/Final_Frequency_Monitors.csv)
+
+## 1×2 与 4×4 横向设计比较
+
+两轮 1×2 优化后的补充研究，在 150 GHz 统一 50 Ω 参考下较验原推荐 1×2 与常规 4×4。
+
+| 150 GHz 指标 | 优化 1×2 | 基本 4×4 |
+|---|---:|---:|
+| Radiation / Total Efficiency | 82.99% / 81.37% | 74.36% / 45.52% |
+| S11 | −17.074 dB | −4.114 dB |
+| Directivity | 9.140 dBi | 12.058 dBi |
+| Peak / +Z Realized Gain | 8.244 / 7.763 dBi | 8.640 / 7.662 dBi |
+| 偏角 / E、H HPBW | 16° / 88.22°、48.06° | 6° / 22.50°、25.50° |
+| 150 GHz 的 −10 dB 带宽 | 13.515 GHz | 无 |
+
+4×4 提供更窄波束和更大方向性。它在 150 GHz 约反射 38.8% 的 50 Ω 入射功率，且 Gold、Polyimide 损耗在已接受功率中的比例更高。课程主方案采用优化的 1×2，保留其效率、匹配、带宽、+Z Gain 与小型结构方面的优势。4×4 的设计和匹配程度是本比较的条件。[源 CSV](4x4_Array_Comparative_Study/03_Comparison/Array_1x2_vs_4x4_Comparison.csv) · [损耗与功率核查](4x4_Array_Comparative_Study/05_Documentation/4x4_POWER_LOSS_ANALYSIS.md)

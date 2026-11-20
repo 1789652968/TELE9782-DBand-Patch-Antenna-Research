@@ -1,0 +1,8 @@
+{
+  "state": "SUCCESS",
+  "reopened": true,
+  "detailed": true,
+  "wall_seconds": 80.6,
+  "wall_scope": "export_only",
+  "native_solver_run_reused": true
+}

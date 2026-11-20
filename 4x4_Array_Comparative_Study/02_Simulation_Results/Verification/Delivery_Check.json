@@ -1,0 +1,22 @@
+{
+  "verified_files": [
+    "01_CST_Project\\Final_4x4\\Final_4x4.cst",
+    "01_CST_Project\\Final_4x4\\Final_4x4\\Result\\Model.log",
+    "01_CST_Project\\Final_4x4\\Surface_Current_150.txt",
+    "01_CST_Project\\Final_4x4\\Farfield_150_Sphere.txt",
+    "01_CST_Project\\Final_4x4\\RealizedGain_Native_150_Sphere.txt",
+    "03_Comparison\\Array_1x2_vs_4x4_Comparison.csv",
+    "05_Documentation\\Comparative_Study_Report.md",
+    "03_Comparison\\Comparison_Summary.md",
+    "02_Simulation_Results\\Verification\\Native_Database_Readback.json"
+  ],
+  "figure_count": 7,
+  "radiation_efficiency_4x4": 74.35601968530119,
+  "archive": {
+    "filename": "Final_4x4_Native_CST.zip",
+    "bytes": 219838513,
+    "sha256": "962763da0e6481cee1b06d8ae211581242e8024194913e3459cc8d5c38cbf377",
+    "source_files": 550,
+    "local_only": true
+  }
+}

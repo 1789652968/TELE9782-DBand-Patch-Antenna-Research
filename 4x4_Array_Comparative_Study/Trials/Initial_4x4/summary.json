@@ -1,0 +1,173 @@
+{
+  "name": "Initial_4x4",
+  "project": "01_CST_Project\\Initial_4x4\\Initial_4x4.cst",
+  "solver": {
+    "message": null,
+    "state": "SUCCESS"
+  },
+  "f_min_s11_GHz": 139.75999450683594,
+  "min_s11_dB": -10.309526697538885,
+  "farfields": [
+    {
+      "f_GHz": 145.0,
+      "Dmax_dBi": 10.280030067518979,
+      "rad_eff_dB": -1.167931816604085,
+      "total_eff_dB": -4.137403366825861,
+      "Prad_W": 0.1928544514444443,
+      "realized_gain_dBi": 6.142626700693118,
+      "s11_dB": -3.0515158448273216
+    },
+    {
+      "f_GHz": 150.0,
+      "Dmax_dBi": 12.102763638158043,
+      "rad_eff_dB": -1.3945509467235988,
+      "total_eff_dB": -5.33869191585802,
+      "Prad_W": 0.14625166289476518,
+      "realized_gain_dBi": 6.764071722300021,
+      "s11_dB": -2.2421542421837652
+    },
+    {
+      "f_GHz": 154.0,
+      "Dmax_dBi": 8.464962937937432,
+      "rad_eff_dB": -1.4639332980146589,
+      "total_eff_dB": -6.166215971705849,
+      "Prad_W": 0.12087831769991038,
+      "realized_gain_dBi": 2.2987469662315827,
+      "s11_dB": -1.795791937122326
+    }
+  ],
+  "messages": [
+    {
+      "text": "This software is licensed for non-commercial use only.",
+      "type": "WARNING"
+    },
+    {
+      "text": "CAD processing via DLL",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD Processing Version Info\n    ACIS version installed:    33.0.1\n    ACIS version used:    33.0.1",
+      "type": "INFO"
+    },
+    {
+      "text": "Starting adaptive port meshing.",
+      "type": "INFO"
+    },
+    {
+      "text": "Mode calculation for port 1:",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD processing via DLL",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD Processing Version Info\n    ACIS version installed:    33.0.1\n    ACIS version used:    33.0.1",
+      "type": "INFO"
+    },
+    {
+      "text": "Using Generalized port mode solver.",
+      "type": "INFO"
+    },
+    {
+      "text": "Port mode solver: Detected dispersive material(s) at port 1. \nUsing a constant approximation of dispersive material(s) at 150 GHz and neglecting loss terms.  More...",
+      "type": "INFO"
+    },
+    {
+      "text": "Pass 1 successfully completed.",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD processing via DLL",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD Processing Version Info\n    ACIS version installed:    33.0.1\n    ACIS version used:    33.0.1",
+      "type": "INFO"
+    },
+    {
+      "text": "Pass 2 successfully completed. Delta (Line Imp.): 1.15%",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD processing via DLL",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD Processing Version Info\n    ACIS version installed:    33.0.1\n    ACIS version used:    33.0.1",
+      "type": "INFO"
+    },
+    {
+      "text": "Pass 3 successfully completed. Delta (Line Imp.): 0.58%",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD processing via DLL",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD Processing Version Info\n    ACIS version installed:    33.0.1\n    ACIS version used:    33.0.1",
+      "type": "INFO"
+    },
+    {
+      "text": "Pass 4 successfully completed. Delta (Line Imp.): 0.22%",
+      "type": "INFO"
+    },
+    {
+      "text": "Adaptive port meshing finished.",
+      "type": "INFO"
+    },
+    {
+      "text": "This software is licensed for non-commercial use only.",
+      "type": "WARNING"
+    },
+    {
+      "text": "CAD processing via DLL",
+      "type": "INFO"
+    },
+    {
+      "text": "CAD Processing Version Info\n    ACIS version installed:    33.0.1\n    ACIS version used:    33.0.1",
+      "type": "INFO"
+    },
+    {
+      "text": "Matrix computation (PBA)\n    [Perfect Boundary Approximation (PBA), version: default]\n    [GPU acceleration: off (by user)]\nMore...",
+      "type": "INFO"
+    },
+    {
+      "text": "Geometry representation: compact",
+      "type": "INFO"
+    },
+    {
+      "text": "Using Generalized port mode solver.",
+      "type": "INFO"
+    },
+    {
+      "text": "Port mode solver: Detected dispersive material(s) at port 1. \nUsing a constant approximation of dispersive material(s) at 150 GHz and neglecting loss terms.  More...",
+      "type": "INFO"
+    },
+    {
+      "text": "Solver Settings:\nExcited port mode: 1 (1) \n[Frequency domain results normalized to default signal]\nExcitation duration: 1.77727437e-001 ns \nSteady state accuracy limit: -60 dB \nMaximum number of time steps: 249576 \nTime step width:\n     without subcycles: 1.424234688e-005 ns\n     used: 1.424234688e-005 ns\nNumber of threads used: 4",
+      "type": "INFO"
+    },
+    {
+      "text": "Steady state energy criterion met, solver finished successfully.",
+      "type": "INFO"
+    },
+    {
+      "text": "The Z and Y matrices have been successfully calculated.\nThe VSWR results have been successfully calculated.",
+      "type": "INFO"
+    },
+    {
+      "text": "Successfully finished Secondary Quantity Evaluation.",
+      "type": "INFO"
+    },
+    {
+      "text": "Creating parametric 1D results for Run ID 1",
+      "type": "INFO"
+    },
+    {
+      "text": "2 warnings occurred.",
+      "type": "WARNING"
+    }
+  ]
+}

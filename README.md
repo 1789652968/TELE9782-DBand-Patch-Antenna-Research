@@ -22,3 +22,11 @@ UNSW TELE9782 的 150 GHz D-band microstrip antenna 研究交接档案。组员�
 - [源文件映射](08_Research_Audit/SOURCE_TO_REPOSITORY_MAP.csv)、[上传核查](08_Research_Audit/Upload_Verification.md)、[协作任务](07_Report_Handover/COLLABORATION_TASKS.md)
 
 主交付与第二轮三个角色均有重开复算和网格证据。粗网格筛选、理想损耗诊断与历史 PPT 都有各自证据口径。所有性能数字来自 CST 仿真，样机测量待开展。
+
+## 4×4 阵列对照
+
+两轮 1×2 优化完成后，我们加入常规、侧馈 16 贴片阵列，用于检查阵列孔径、馈电复杂度、损耗与匹配对实际增益的影响。150 GHz 的 4×4 Directivity 为 **12.058 dBi**，高 2.918 dB，峰值 Realized Gain 为 **8.640 dBi**，高 0.396 dB。它的 Radiation Efficiency 为 **74.36%**，Total Efficiency 为 **45.52%**，S11 为 **−4.114 dB**。4×4 波束更窄且更接近 +Z，优化 1×2 仍具有更高效率、更宽匹配带宽和略高的 +Z 实现增益。课程主交付继续使用 82.99% 的 1×2。
+
+![4×4 与优化 1×2 的 150 GHz 效率、方向性和实现增益](4x4_Array_Comparative_Study/Figures/Efficiency_Directivity_Gain_Comparison.png)
+
+[4×4 研究交接](4x4_Array_Comparative_Study/README.md) · [完整性能 CSV](4x4_Array_Comparative_Study/03_Comparison/Array_1x2_vs_4x4_Comparison.csv) · [原生 CST 工程下载](4x4_Array_Comparative_Study/Artifact_Manifest.md)
