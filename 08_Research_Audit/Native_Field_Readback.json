@@ -1,0 +1,146 @@
+[
+  {
+    "model": "TELE9782_DBand_Efficiency_Final",
+    "farfield_150GHz": [
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Phi=0\\farfield (f=150)",
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Phi=90\\farfield (f=150)",
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Theta=90\\farfield (f=150)",
+      "Farfields\\farfield (f=150) [1]"
+    ],
+    "surface_current": [
+      "2D/3D Results\\Surface Current",
+      "2D/3D Results\\Surface Current\\surface current (f=130) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=140) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=150) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=160) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=170) [1]"
+    ],
+    "operation": "Native CST model and field tree opened in a separate extracted copy; no solve"
+  },
+  {
+    "model": "ShiftBracket85_Delivery",
+    "farfield_150GHz": [
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Phi=0\\farfield (f=150)",
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Phi=90\\farfield (f=150)",
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Theta=90\\farfield (f=150)",
+      "Farfields\\farfield (f=150) [1]"
+    ],
+    "surface_current": [
+      "2D/3D Results\\Surface Current",
+      "2D/3D Results\\Surface Current\\surface current (f=130) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=140) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=150) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=160) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=170) [1]"
+    ],
+    "operation": "Native CST model and field tree opened in a separate extracted copy; no solve"
+  },
+  {
+    "model": "H085_Delivery",
+    "farfield_150GHz": [
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Phi=0\\farfield (f=150)",
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Phi=90\\farfield (f=150)",
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Theta=90\\farfield (f=150)",
+      "Farfields\\farfield (f=150) [1]"
+    ],
+    "surface_current": [
+      "2D/3D Results\\Surface Current",
+      "2D/3D Results\\Surface Current\\surface current (f=130) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=140) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=150) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=160) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=170) [1]"
+    ],
+    "operation": "Native CST model and field tree opened in a separate extracted copy; no solve"
+  },
+  {
+    "model": "ShiftNull75_Delivery",
+    "farfield_150GHz": [
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Phi=0\\farfield (f=150)",
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Phi=90\\farfield (f=150)",
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Theta=90\\farfield (f=150)",
+      "Farfields\\farfield (f=150) [1]"
+    ],
+    "surface_current": [
+      "2D/3D Results\\Surface Current",
+      "2D/3D Results\\Surface Current\\surface current (f=130) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=140) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=150) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=160) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=170) [1]"
+    ],
+    "operation": "Native CST model and field tree opened in a separate extracted copy; no solve"
+  },
+  {
+    "model": "WideGround_Delivery",
+    "farfield_150GHz": [
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Phi=0\\farfield (f=150)",
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Phi=90\\farfield (f=150)",
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Theta=90\\farfield (f=150)",
+      "Farfields\\farfield (f=150) [1]"
+    ],
+    "surface_current": [
+      "2D/3D Results\\Surface Current",
+      "2D/3D Results\\Surface Current\\surface current (f=130) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=140) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=150) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=160) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=170) [1]"
+    ],
+    "operation": "Native CST model and field tree opened in a separate extracted copy; no solve"
+  },
+  {
+    "model": "TELE9782_DBand_1x2_Array_Final",
+    "farfield_150GHz": [
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Phi=0\\farfield (f=150)",
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Phi=90\\farfield (f=150)",
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Theta=90\\farfield (f=150)",
+      "Farfields\\farfield (f=150) [1]"
+    ],
+    "surface_current": [
+      "2D/3D Results\\Surface Current",
+      "2D/3D Results\\Surface Current\\surface current (f=130) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=140) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=150) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=160) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=170) [1]"
+    ],
+    "operation": "Native CST model and field tree opened in a separate extracted copy; no solve"
+  },
+  {
+    "model": "TELE9782_DBand_Patch_Final",
+    "farfield_150GHz": [
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Phi=0\\farfield (f=150)",
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Phi=90\\farfield (f=150)",
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Theta=90\\farfield (f=150)",
+      "Farfields\\farfield (f=150) [1]"
+    ],
+    "surface_current": [
+      "2D/3D Results\\Surface Current",
+      "2D/3D Results\\Surface Current\\surface current (f=130) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=140) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=150) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=160) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=170) [1]"
+    ],
+    "operation": "Native CST model and field tree opened in a separate extracted copy; no solve"
+  },
+  {
+    "model": "GroundControl",
+    "farfield_150GHz": [
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Phi=0\\farfield (f=150)",
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Phi=90\\farfield (f=150)",
+      "Farfields\\Farfield Cuts\\Excitation [1]\\Theta=90\\farfield (f=150)",
+      "Farfields\\farfield (f=150) [1]"
+    ],
+    "surface_current": [
+      "2D/3D Results\\Surface Current",
+      "2D/3D Results\\Surface Current\\surface current (f=130) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=140) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=150) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=160) [1]",
+      "2D/3D Results\\Surface Current\\surface current (f=170) [1]"
+    ],
+    "operation": "Native CST model and field tree opened in a separate extracted copy; no solve"
+  }
+]
