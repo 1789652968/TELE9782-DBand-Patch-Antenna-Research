@@ -1,6 +1,6 @@
 # GitHub 上传与完整性核查
 
-GitHub API 确认仓库为 Private，默认分支 main。初始档案提交为 [152a3c1025dda386d0a9c55a7cecb1b047583b8c](https://github.com/1789652968/TELE9782-DBand-Patch-Antenna-Research/commit/152a3c1025dda386d0a9c55a7cecb1b047583b8c)。从 GitHub 单独克隆该提交，运行 git fsck，并逐个核对映射表中全部上传源文件的 SHA256。档案快照含 5,220 个文件、628,858,636 字节。这个统计基于初始档案提交。完成查验后再提交此页、原生场读回记录与链接。
+初次归档时仓库为 Private，默认分支为 main。随后按项目组要求改为公开。已通过无登录请求复核仓库主页、Release 附件列表和推荐工程 ZIP 的下载响应。初始档案提交为 [152a3c1025dda386d0a9c55a7cecb1b047583b8c](https://github.com/1789652968/TELE9782-DBand-Patch-Antenna-Research/commit/152a3c1025dda386d0a9c55a7cecb1b047583b8c)。从 GitHub 单独克隆该提交，运行 git fsck，并逐个核对映射表中全部上传源文件的 SHA256。档案快照含 5,220 个文件、628,858,636 字节。这个统计基于初始档案提交。完成查验后再提交此页、原生场读回记录与链接。
 
 Git 未使用 LFS，核验得到零 LFS 指针。Release 总计 8 个附件、1,085,531,393 字节。逐一从 GitHub 下载，以实际响应内容核对大小和 SHA256。每个 ZIP 在本地制作时对所有成员逐一核对原文件 SHA256。[GitHub Release](https://github.com/1789652968/TELE9782-DBand-Patch-Antenna-Research/releases/tag/cst-research-archive-v1)
 
